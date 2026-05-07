@@ -1,0 +1,9 @@
+<svg width="82" height="82" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="8" y="16" width="44" height="50" rx="8" fill="#F5A74A"/>
+  <rect x="13" y="22" width="34" height="32" rx="6" fill="#FFF1DF"/>
+  <path d="M18 19C18 12.4 23.4 7 30 7C36.6 7 42 12.4 42 19" stroke="#F5A74A" stroke-width="3"/>
+  <rect x="54" y="32" width="20" height="4" rx="2" fill="#E29D3E"/>
+  <rect x="58" y="24" width="4" height="20" rx="2" fill="#E29D3E"/>
+  <text x="18" y="39" fill="#111111" font-size="9" font-family="Arial" font-weight="700">a  f  m</text>
+  <text x="16" y="52" fill="#4A4A4A" font-size="6" font-family="Arial" font-weight="700">AJIO  CLiQ  +More</text>
+</svg>

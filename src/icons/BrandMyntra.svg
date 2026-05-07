@@ -1,0 +1,5 @@
+<svg width="64" height="24" viewBox="0 0 64 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M8 18L13 6L18 18" stroke="#FF4D8D" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M13 6L18 13L23 6" stroke="#F5A623" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="29" y="17" fill="#1C1C1C" font-size="9" font-family="Arial" font-weight="700">Myntra</text>
+</svg>
