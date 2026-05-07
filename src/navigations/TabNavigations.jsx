@@ -9,7 +9,7 @@ import TabStore from '../icons/TabStore.svg';
 import TabUser from '../icons/TabUser.svg';
 import AccRupee from '../icons/AccRupee.svg';
 import AccountScreen from '../screens/TabScreens/AccountScreen';
-import CashbackScreen from '../screens/TabScreens/CashbackScreen';
+import CategoriesScreen from '../screens/TabScreens/CategoriesScreen';
 import GiftCardsScreen from '../screens/TabScreens/GiftCardsScreen';
 import HomeScreen from '../screens/TabScreens/HomeScreen';
 import StoresScreen from '../screens/TabScreens/StoresScreen';
@@ -52,8 +52,7 @@ const TabNavigations = () => {
   return (
     <Tab.Navigator initialRouteName="Home" screenOptions={getScreenOptions}>
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Cashback" component={CashbackScreen} />
-      <Tab.Screen name="Categories" component={StoresScreen} />
+      <Tab.Screen name="Categories" component={CategoriesScreen} />
       <Tab.Screen name="Gift Cards" component={GiftCardsScreen} />
       <Tab.Screen name="Account" component={AccountScreen} />
     </Tab.Navigator>
