@@ -7,18 +7,19 @@ import TabGrid from '../icons/TabGrid.svg';
 import TabHome from '../icons/TabHome.svg';
 import TabStore from '../icons/TabStore.svg';
 import TabUser from '../icons/TabUser.svg';
-import AccountScreen from '../screens/tabs/AccountScreen';
-import CategoriesScreen from '../screens/tabs/CategoriesScreen';
-import GiftCardsScreen from '../screens/tabs/GiftCardsScreen';
-import HomeScreen from '../screens/tabs/HomeScreen';
-import StoresScreen from '../screens/tabs/StoresScreen';
-import { tabNavigationStyles as styles } from '../styles/styles';
+import AccRupee from '../icons/AccRupee.svg';
+import AccountScreen from '../screens/TabScreens/AccountScreen';
+import CashbackScreen from '../screens/TabScreens/CashbackScreen';
+import GiftCardsScreen from '../screens/TabScreens/GiftCardsScreen';
+import HomeScreen from '../screens/TabScreens/HomeScreen';
+import StoresScreen from '../screens/TabScreens/StoresScreen';
+import { tabNavigationStyles as styles } from '../Styles/styles';
 
 const Tab = createBottomTabNavigator();
 
-const renderIcon = (Icon, focused) => (
+const renderIcon = (Icon, focused, isCashback = false) => (
   <View style={[styles.iconWrap, focused && styles.iconWrapFocused]}>
-    <Icon width={20} height={20} color={focused ? '#FFFFFF' : '#6B7280'} />
+    <Icon width={24} height={24} color={focused ? (isCashback ? '#16A34A' : '#FF5A00') : '#374151'} />
   </View>
 );
 
@@ -26,11 +27,11 @@ const getScreenOptions = ({ route }) => ({
   headerShown: false,
   tabBarStyle: styles.tabBar,
   tabBarLabelStyle: styles.tabLabel,
-  tabBarActiveTintColor: '#1F9E43',
-  tabBarInactiveTintColor: '#6B7280',
+  tabBarActiveTintColor: route.name === 'Cashback' ? '#16A34A' : '#FF5A00',
+  tabBarInactiveTintColor: '#374151',
   tabBarIcon: ({ focused }) => {
     if (route.name === 'Home') return renderIcon(TabHome, focused);
-    if (route.name === 'Stores') return renderIcon(TabStore, focused);
+    if (route.name === 'Cashback') return renderIcon(AccRupee, focused, true);
     if (route.name === 'Categories') return renderIcon(TabGrid, focused);
     if (route.name === 'Gift Cards') return renderIcon(TabGift, focused);
     return renderIcon(TabUser, focused);
@@ -39,7 +40,7 @@ const getScreenOptions = ({ route }) => ({
     <Text
       style={[
         styles.tabLabel,
-        focused ? styles.tabLabelActive : styles.tabLabelInactive,
+        focused ? (route.name === 'Cashback' ? { color: '#16A34A', fontFamily: 'Inter_18pt-Bold' } : styles.tabLabelActive) : styles.tabLabelInactive,
       ]}
     >
       {route.name}
@@ -51,8 +52,8 @@ const TabNavigations = () => {
   return (
     <Tab.Navigator initialRouteName="Home" screenOptions={getScreenOptions}>
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Stores" component={StoresScreen} />
-      <Tab.Screen name="Categories" component={CategoriesScreen} />
+      <Tab.Screen name="Cashback" component={CashbackScreen} />
+      <Tab.Screen name="Categories" component={StoresScreen} />
       <Tab.Screen name="Gift Cards" component={GiftCardsScreen} />
       <Tab.Screen name="Account" component={AccountScreen} />
     </Tab.Navigator>

@@ -3,9 +3,14 @@ import { StyleSheet } from 'react-native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import LoginScreen from '../screens/authscreens/LoginScreen';
-import OTPScreen from '../screens/authscreens/OTPScreen';
+import OnboardingScreen from '../screens/Authscreens/OnboardingScreen';
+import LoginScreen from '../screens/Authscreens/LoginScreen';
+import OTPScreen from '../screens/Authscreens/OTPScreen';
 import TabNavigations from './TabNavigations';
+import KycBankScreen from '../screens/AccountScreens/KycBankScreen';
+import SupportCenterScreen from '../screens/AccountScreens/SupportCenterScreen';
+import ReportProblemScreen from '../screens/AccountScreens/ReportProblemScreen';
+import SettingsScreen from '../screens/AccountScreens/SettingsScreen';
 
 const Stack = createStackNavigator();
 
@@ -16,11 +21,22 @@ const StackNavigation = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName="MainTabs"
+        initialRouteName="OnboardingScreen"
       >
+        <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />
         <Stack.Screen name="OTPScreen" component={OTPScreen} />
         <Stack.Screen name="MainTabs" component={TabNavigations} />
+        <Stack.Screen name="KycBankScreen" component={KycBankScreen} />
+        <Stack.Screen
+          name="SupportCenterScreen"
+          component={SupportCenterScreen}
+        />
+        <Stack.Screen
+          name="ReportProblemScreen"
+          component={ReportProblemScreen}
+        />
+        <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
       </Stack.Navigator>
     </SafeAreaView>
   );

@@ -13,7 +13,7 @@ import BrandZomato from '../../icons/BrandZomato.svg';
 import GiftCard from '../../icons/TabGift.svg';
 import PercentTag from '../../icons/PercentTag.svg';
 import HeroWalletCoins from '../../icons/HeroWalletCoins.svg';
-import { homeStyles as styles } from '../../styles/styles';
+import { homeStyles as styles } from '../../Styles/styles';
 
 const offers = [
   { brand: 'Myntra', pct: '7.5%', tag: 'FASHION', Logo: BrandMyntra },
@@ -34,7 +34,10 @@ const giftCards = [
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
+      <ScrollView
+        contentContainerStyle={styles.scrollContent}
+        showsVerticalScrollIndicator={false}
+      >
         <View style={styles.hero}>
           <View style={styles.heroRow}>
             <View style={styles.heroLeft}>
@@ -52,24 +55,31 @@ const HomeScreen = () => {
             </View>
           </View>
 
-          <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.offerList}>
+          <ScrollView
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            style={styles.offerList}
+          >
             {offers.map(item => {
               const Logo = item.Logo;
               return (
-              <View key={item.brand} style={styles.offerCard}>
-                <View style={styles.offerLogoWrap}>
-                  <Logo width={64} height={24} />
+                <View key={item.brand} style={styles.offerCard}>
+                  <View style={styles.offerLogoWrap}>
+                    <Logo width={64} height={24} />
+                  </View>
+                  <Text style={styles.offerUpto}>Up to</Text>
+                  <Text style={styles.offerPercent}>{item.pct}</Text>
+                  <Text style={styles.offerCashback}>cashback</Text>
+                  <Text style={styles.offerTag}>{item.tag}</Text>
                 </View>
-                <Text style={styles.offerUpto}>Up to</Text>
-                <Text style={styles.offerPercent}>{item.pct}</Text>
-                <Text style={styles.offerCashback}>cashback</Text>
-                <Text style={styles.offerTag}>{item.tag}</Text>
-              </View>
               );
             })}
           </ScrollView>
 
-          <LinearGradient colors={['#60B531', '#2E8F22']} style={styles.ctaButton}>
+          <LinearGradient
+            colors={['#60B531', '#2E8F22']}
+            style={styles.ctaButton}
+          >
             <Text style={styles.ctaText}>Shop Now</Text>
             <Text style={styles.ctaText}>→</Text>
           </LinearGradient>
@@ -95,8 +105,12 @@ const HomeScreen = () => {
         <View style={styles.allStoreCard}>
           <View>
             <Text style={styles.allStoreTitle}>All in One Store</Text>
-            <Text style={styles.allStoreSub}>Shop from 1000+ stores, compare deals</Text>
-            <Text style={styles.allStoreSub}>and earn cashback - all in one place!</Text>
+            <Text style={styles.allStoreSub}>
+              Shop from 1000+ stores, compare deals
+            </Text>
+            <Text style={styles.allStoreSub}>
+              and earn cashback - all in one place!
+            </Text>
             <View style={styles.secondaryBtn}>
               <Text style={styles.secondaryBtnText}>Explore All Stores</Text>
               <Text style={styles.secondaryBtnText}>→</Text>
@@ -110,19 +124,21 @@ const HomeScreen = () => {
             <GiftCard width={24} height={24} />
             <Text style={styles.giftTitle}>Gift Cards</Text>
           </View>
-          <Text style={styles.giftSub}>Buy gift cards from top brands and save more</Text>
+          <Text style={styles.giftSub}>
+            Buy gift cards from top brands and save more
+          </Text>
 
           <View style={styles.giftList}>
             {giftCards.map(card => {
               const Logo = card.Logo;
               return (
-              <View key={card.name} style={styles.giftItem}>
-                <View style={styles.giftLogoWrap}>
-                  <Logo width={56} height={22} />
+                <View key={card.name} style={styles.giftItem}>
+                  <View style={styles.giftLogoWrap}>
+                    <Logo width={56} height={22} />
+                  </View>
+                  <Text style={styles.giftItemName}>{card.name}</Text>
+                  <Text style={styles.giftItemPct}>{card.pct}</Text>
                 </View>
-                <Text style={styles.giftItemName}>{card.name}</Text>
-                <Text style={styles.giftItemPct}>{card.pct}</Text>
-              </View>
               );
             })}
           </View>
@@ -141,15 +157,21 @@ const HomeScreen = () => {
           <View style={styles.featureRow}>
             <View style={styles.featureItem}>
               <Text style={styles.featureHead}>Best Discounts</Text>
-              <Text style={styles.featureSub}>Save more on every gift card</Text>
+              <Text style={styles.featureSub}>
+                Save more on every gift card
+              </Text>
             </View>
             <View style={styles.featureItem}>
               <Text style={styles.featureHead}>100% Safe & Secure</Text>
-              <Text style={styles.featureSub}>Trusted by thousands of users</Text>
+              <Text style={styles.featureSub}>
+                Trusted by thousands of users
+              </Text>
             </View>
             <View style={[styles.featureItem, styles.featureItemLast]}>
               <Text style={styles.featureHead}>Instant Delivery</Text>
-              <Text style={styles.featureSub}>Get your gift cards instantly</Text>
+              <Text style={styles.featureSub}>
+                Get your gift cards instantly
+              </Text>
             </View>
           </View>
         </View>

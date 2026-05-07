@@ -10,7 +10,7 @@ import ShoppingBag from '../../icons/ShoppingBag.svg';
 import OtpShieldLock from '../../icons/OtpShieldLock.svg';
 import Laurel from '../../icons/Laurel.svg';
 import Pencil from '../../icons/Pencil.svg';
-import { otpStyles as styles } from '../../styles/styles';
+import { otpStyles as styles } from '../../Styles/styles';
 
 const floatingMoney = [
   { top: 50, left: -12, rotate: '-14deg', scale: 0.8, opacity: 0.55 },
@@ -58,7 +58,10 @@ const OTPScreen = () => {
           </View>
         ))}
 
-        <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+        <ScrollView
+          contentContainerStyle={styles.content}
+          showsVerticalScrollIndicator={false}
+        >
           <Text style={styles.backArrow}>←</Text>
 
           <View style={styles.brandWrap}>
@@ -95,7 +98,8 @@ const OTPScreen = () => {
             OTP will expire in <Text style={styles.timerText}>00:59</Text>
           </Text>
           <Text style={styles.resendText}>
-            Didn't receive OTP? <Text style={styles.resendLink}>Resend OTP</Text>
+            Didn't receive OTP?{' '}
+            <Text style={styles.resendLink}>Resend OTP</Text>
           </Text>
 
           <View style={styles.securityCard}>
@@ -103,8 +107,12 @@ const OTPScreen = () => {
               <ShieldCheck width={22} height={22} />
             </View>
             <View style={styles.securityTextWrap}>
-              <Text style={styles.securityTitle}>Your security is our priority.</Text>
-              <Text style={styles.securitySub}>We never share your details with anyone.</Text>
+              <Text style={styles.securityTitle}>
+                Your security is our priority.
+              </Text>
+              <Text style={styles.securitySub}>
+                We never share your details with anyone.
+              </Text>
             </View>
           </View>
 
@@ -122,7 +130,8 @@ const OTPScreen = () => {
             <Laurel width={18} height={18} />
             <ShieldCheck width={16} height={16} />
             <Text style={styles.trustedText}>
-              Trusted by <Text style={styles.trustedBold}>1M+ </Text>Happy Customers
+              Trusted by <Text style={styles.trustedBold}>1M+ </Text>Happy
+              Customers
             </Text>
             <Laurel width={18} height={18} />
           </View>

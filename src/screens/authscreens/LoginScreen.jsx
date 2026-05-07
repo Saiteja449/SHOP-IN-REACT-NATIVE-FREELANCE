@@ -12,7 +12,7 @@ import ShieldCheck from '../../icons/ShieldCheck.svg';
 import ShoppingBag from '../../icons/ShoppingBag.svg';
 import Truck from '../../icons/Truck.svg';
 import Wallet from '../../icons/Wallet.svg';
-import { loginStyles as styles } from '../../styles/styles';
+import { loginStyles as styles } from '../../Styles/styles';
 
 const floatingMoney = [
   { top: 14, left: -4, rotate: '-18deg', scale: 0.88, opacity: 0.95 },
@@ -62,7 +62,9 @@ const LoginScreen = () => {
           const size = 24;
           return (
             <View key={`decor-${idx}`} style={[styles.absDecor, d]}>
-              {d.icon === 'percent' && <PercentTag width={size} height={size} />}
+              {d.icon === 'percent' && (
+                <PercentTag width={size} height={size} />
+              )}
               {d.icon === 'bag' && <ShoppingBag width={size} height={size} />}
               {d.icon === 'cart' && <Cart width={size} height={size} />}
               {d.icon === 'coin' && <CoinCircle width={size} height={size} />}
@@ -70,7 +72,10 @@ const LoginScreen = () => {
           );
         })}
 
-        <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
+        <ScrollView
+          contentContainerStyle={styles.content}
+          showsVerticalScrollIndicator={false}
+        >
           <View style={styles.brandWrap}>
             <Text style={styles.brandMain}>
               SHOPTO<Text style={styles.brandAccent}>SAVE</Text>
@@ -90,14 +95,18 @@ const LoginScreen = () => {
                   </View>
                   <Text style={styles.featureTitle}>{item.title}</Text>
                   <Text style={styles.featureSub}>{item.subtitle}</Text>
-                  {idx < featureData.length - 1 && <View style={styles.featureDivider} />}
+                  {idx < featureData.length - 1 && (
+                    <View style={styles.featureDivider} />
+                  )}
                 </View>
               );
             })}
           </View>
 
           <Text style={styles.welcomeTitle}>Welcome Back!</Text>
-          <Text style={styles.welcomeSub}>Enter your mobile number to continue</Text>
+          <Text style={styles.welcomeSub}>
+            Enter your mobile number to continue
+          </Text>
 
           <View style={styles.phoneInput}>
             <Text style={styles.countryCode}>+91</Text>
@@ -134,7 +143,8 @@ const LoginScreen = () => {
           <View style={styles.trustedRow}>
             <ShieldCheck width={18} height={18} />
             <Text style={styles.trustedText}>
-              Trusted by <Text style={styles.trustedBold}>1M+ </Text>Happy Customers
+              Trusted by <Text style={styles.trustedBold}>1M+ </Text>Happy
+              Customers
             </Text>
           </View>
         </ScrollView>
