@@ -1,5 +1,12 @@
 import React from 'react';
-import { ScrollView, StatusBar, Text, TextInput, View } from 'react-native';
+import {
+  ScrollView,
+  StatusBar,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import ArrowCircleRight from '../../icons/ArrowCircleRight.svg';
@@ -15,11 +22,12 @@ import Wallet from '../../icons/Wallet.svg';
 import { loginStyles as styles } from '../../Styles/styles';
 
 const floatingMoney = [
-  { top: 14, left: -4, rotate: '-18deg', scale: 0.88, opacity: 0.95 },
-  { top: 18, right: -14, rotate: '20deg', scale: 0.9, opacity: 0.95 },
-  { top: 208, right: -24, rotate: '-26deg', scale: 0.9, opacity: 0.72 },
-  { top: 472, left: -18, rotate: '12deg', scale: 0.95, opacity: 0.95 },
-  { top: 634, right: -10, rotate: '-24deg', scale: 0.82, opacity: 0.72 },
+  { top: 14, left: -4, rotate: '-18deg', scale: 0.88, opacity: 0.6 },
+  { top: 18, right: -14, rotate: '20deg', scale: 0.9, opacity: 0.55 },
+  { top: 150, right: -24, rotate: '-26deg', scale: 0.9, opacity: 0.4 },
+  { top: 100, left: -18, rotate: '12deg', scale: 0.95, opacity: 0.6 },
+  { top: 634, right: -10, rotate: '-24deg', scale: 0.82, opacity: 0.45 },
+  { bottom: 20, left: -10, rotate: '-24deg', scale: 0.82, opacity: 0.45 },
 ];
 
 const floatDecor = [
@@ -54,7 +62,7 @@ const LoginScreen = () => {
               },
             ]}
           >
-            <CashNote width={98} height={58} />
+            <CashNote width={68} height={40} />
           </View>
         ))}
 
@@ -124,10 +132,15 @@ const LoginScreen = () => {
             colors={['#A6D36A', '#7DAF43']}
             start={{ x: 0, y: 0 }}
             end={{ x: 1, y: 0 }}
-            style={styles.continueBtn}
+            style={{ borderRadius: 12, marginTop: 12 }}
           >
-            <Text style={styles.continueText}>Continue</Text>
-            <Text style={styles.continueArrow}>→</Text>
+            <TouchableOpacity
+              style={styles.continueBtn}
+              onPress={() => console.log('Continue')}
+            >
+              <Text style={styles.continueText}>Continue</Text>
+              <Text style={styles.continueArrow}>→</Text>
+            </TouchableOpacity>
           </LinearGradient>
 
           <View style={styles.cashbackCard}>

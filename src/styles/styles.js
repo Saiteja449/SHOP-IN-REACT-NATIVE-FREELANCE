@@ -410,13 +410,12 @@ export const loginStyles = StyleSheet.create({
   },
   brandWrap: {
     alignItems: 'center',
-    marginTop: 14,
+    marginTop: 30,
   },
   brandMain: {
-    fontSize: 46,
+    fontSize: 28,
     fontFamily: 'Inter_18pt-ExtraBold',
     color: '#111410',
-    letterSpacing: -1.2,
     zIndex: 2,
   },
   brandAccent: {
@@ -430,7 +429,7 @@ export const loginStyles = StyleSheet.create({
     letterSpacing: 1.4,
   },
   heroPad: {
-    height: 275,
+    height: 70,
   },
   featuresCard: {
     marginTop: 10,
@@ -505,7 +504,7 @@ export const loginStyles = StyleSheet.create({
     paddingHorizontal: 12,
   },
   countryCode: {
-    fontSize: 29,
+    fontSize: 14,
     fontFamily: 'Inter_18pt-SemiBold',
     color: '#469739',
   },
@@ -523,13 +522,12 @@ export const loginStyles = StyleSheet.create({
   },
   phoneTextInput: {
     flex: 1,
-    fontSize: 17,
+    fontSize: 14,
     color: '#232A1F',
     fontFamily: 'Inter_18pt-Regular',
     paddingVertical: 8,
   },
   continueBtn: {
-    marginTop: 12,
     minHeight: 48,
     borderRadius: 12,
     flexDirection: 'row',
@@ -553,7 +551,7 @@ export const loginStyles = StyleSheet.create({
     borderRadius: 14,
     borderWidth: 1,
     borderColor: '#DFE9D5',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#DFE9D5',
     paddingVertical: 10,
     paddingHorizontal: 10,
     alignItems: 'center',
@@ -570,14 +568,14 @@ export const loginStyles = StyleSheet.create({
   },
   cashbackMid: {
     marginTop: 1,
-    fontSize: 27,
+    fontSize: 16,
     lineHeight: 31,
     color: '#4B9139',
     fontFamily: 'Inter_18pt-Bold',
   },
   cashbackBottom: {
     marginTop: 2,
-    fontSize: 18,
+    fontSize: 14,
     color: '#7F8A77',
     fontFamily: 'Inter_18pt-Regular',
   },
