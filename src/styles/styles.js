@@ -123,8 +123,8 @@ export const onboardingStyles = StyleSheet.create({
   },
   giftCard: {
     width: '48%',
-    height: 116,
-    borderRadius: 12,
+    height: 115,
+    borderRadius: 24,
     backgroundColor: '#FFFFFF',
     overflow: 'hidden',
     shadowColor: '#5C4B91',
@@ -134,16 +134,16 @@ export const onboardingStyles = StyleSheet.create({
     elevation: 5,
   },
   giftCardTop: {
-    height: 62,
+    height: 60,
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
   },
   giftAmazon: {
-    backgroundColor: '#111214',
+    backgroundColor: '#000000',
   },
   giftFlipkart: {
-    backgroundColor: '#0877D9',
+    backgroundColor: '#c5e4ffff',
   },
   giftMyntra: {
     backgroundColor: '#FF4E6A',
@@ -181,12 +181,12 @@ export const onboardingStyles = StyleSheet.create({
     paddingHorizontal: 11,
     paddingVertical: 9,
     flexDirection: 'row',
-    alignItems: 'flex-end',
+    alignItems: 'flex-start',
     justifyContent: 'space-between',
   },
   giftName: {
     color: '#171B24',
-    fontSize: 10,
+    fontSize: 14,
     fontFamily: 'Inter_18pt-Bold',
   },
   giftOffer: {
@@ -237,12 +237,6 @@ export const onboardingStyles = StyleSheet.create({
     borderRadius: 16,
     padding: 13,
     backgroundColor: '#FFFFFF',
-    shadowColor: '#AB6A27',
-    shadowOffset: { width: 0, height: 9 },
-    shadowOpacity: 0.1,
-    shadowRadius: 18,
-    elevation: 5,
-    zIndex: 3,
   },
   panelHeader: {
     marginBottom: 10,
@@ -267,19 +261,26 @@ export const onboardingStyles = StyleSheet.create({
     rowGap: 9,
   },
   storeCell: {
-    width: '30.8%',
-    aspectRatio: 1.16,
-    borderRadius: 10,
+    width: '31%',
+    aspectRatio: 1.1,
+    borderRadius: 20,
     borderWidth: 1,
-    borderColor: '#EEF0EE',
+    borderColor: '#F1F5F9',
     backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
+    padding: 4,
   },
-  storeTextLogo: {
-    fontSize: 12,
-    textAlign: 'center',
-    fontFamily: 'Inter_18pt-ExtraBold',
+  morePlus: {
+    fontSize: 28,
+    color: '#334155',
+    fontFamily: 'Inter_18pt-Medium',
+  },
+  moreText: {
+    fontSize: 10,
+    color: '#475569',
+    fontFamily: 'Inter_18pt-SemiBold',
+    marginTop: 2,
   },
   securePanel: {
     marginTop: 17,

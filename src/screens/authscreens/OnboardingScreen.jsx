@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import {
   Dimensions,
+  Image,
   Pressable,
   ScrollView,
   StatusBar,
@@ -22,27 +23,48 @@ import OnboardingStoreCard from '../../icons/OnboardingStoreCard.svg';
 import OnboardingWalletHero from '../../icons/OnboardingWalletHero.svg';
 import ShieldCheck from '../../icons/ShieldCheck.svg';
 import ArrowCircleRight from '../../icons/ArrowCircleRight.svg';
+import TabGrid from '../../icons/TabGrid.svg';
 import { onboardingStyles as styles } from '../../Styles/styles';
 
 const { width } = Dimensions.get('window');
 
 const storeLogos = [
-  { name: 'amazon', Icon: BrandAmazon },
-  { name: 'Flipkart', Icon: BrandFlipkart },
-  { name: 'Myntra', Icon: BrandMyntra },
-  { name: 'AJIO', Icon: BrandAjio },
-  { name: 'TATA CLiQ', Icon: BrandTataCliq },
-  { name: 'make my trip', text: 'make my trip', color: '#2563EB' },
-  { name: 'SWIGGY', text: 'SWIGGY', color: '#F97316' },
-  { name: 'NYKAA', text: 'NYKAA', color: '#F0007A' },
-  { name: '100+ Stores', More: OnboardingStoreCard },
+  { name: 'amazon', image: require('../../../assets/images/amazon_white.png') },
+  { name: 'Flipkart', image: require('../../../assets/images/flipkart.png') },
+  { name: 'Myntra', image: require('../../../assets/images/myntra.png') },
+  { name: 'AJIO', image: require('../../../assets/images/ajio.png') },
+  { name: 'TATA CLiQ', image: require('../../../assets/images/tata_cliq.png') },
+  { name: 'make my trip', image: require('../../../assets/images/mmt.png') },
+  { name: 'SWIGGY', image: require('../../../assets/images/swiggy.png') },
+  { name: 'NYKAA', image: require('../../../assets/images/nykaa.png') },
+  { name: '100+ Stores', More: true },
 ];
 
 const giftCards = [
-  { name: 'Amazon Pay', pct: '8%', kind: 'amazon' },
-  { name: 'Flipkart', pct: '6%', kind: 'flipkart' },
-  { name: 'Myntra', pct: '7%', kind: 'myntra' },
-  { name: 'Zomato', pct: '10%', kind: 'zomato' },
+  {
+    name: 'Amazon Pay',
+    pct: '8%',
+    kind: 'amazon',
+    logo: require('../../../assets/images/amazon_pay.png'),
+  },
+  {
+    name: 'Flipkart',
+    pct: '6%',
+    kind: 'flipkart',
+    logo: require('../../../assets/images/flipkart.png'),
+  },
+  {
+    name: 'Myntra',
+    pct: '7%',
+    kind: 'myntra',
+    logo: require('../../../assets/images/myntra.png'),
+  },
+  {
+    name: 'Zomato',
+    pct: '10%',
+    kind: 'zomato',
+    logo: require('../../../assets/images/zomato.png'),
+  },
 ];
 
 const BackgroundDecals = ({ tone, variant = 'soft' }) => {
@@ -114,22 +136,37 @@ const GiftCard = ({ item }) => {
 
   return (
     <View style={styles.giftCard}>
-      <View
-        style={[
-          styles.giftCardTop,
-          isAmazon && styles.giftAmazon,
-          isFlipkart && styles.giftFlipkart,
-          isMyntra && styles.giftMyntra,
-        ]}
-      >
-        {isAmazon && <Text style={styles.amazonGiftLogo}>a</Text>}
-        {isAmazon && <Text style={styles.amazonSmile}>⌣</Text>}
-        {isFlipkart && <Text style={styles.flipkartGiftLogo}>Flipkart</Text>}
-        {isMyntra && <Text style={styles.myntraGiftLogo}>M</Text>}
-        {item.kind === 'zomato' && (
-          <Text style={styles.zomatoGiftLogo}>zomato</Text>
-        )}
-      </View>
+      {isMyntra ? (
+        <LinearGradient
+          colors={['#FF8E3C', '#FF2D55']}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.giftCardTop}
+        >
+          <Image
+            source={item.logo}
+            style={{ width: '70%', height: '70%' }}
+            resizeMode="contain"
+          />
+        </LinearGradient>
+      ) : (
+        <View
+          style={[
+            styles.giftCardTop,
+            isAmazon && styles.giftAmazon,
+            isFlipkart && styles.giftFlipkart,
+          ]}
+        >
+          <Image
+            source={item.logo}
+            style={{
+              width: isFlipkart ? '100%' : '70%',
+              height: isFlipkart ? '100%' : '70%',
+            }}
+            resizeMode="contain"
+          />
+        </View>
+      )}
       <View style={styles.giftCardBottom}>
         <Text style={styles.giftName}>{item.name}</Text>
         <View style={styles.giftOffer}>
@@ -143,24 +180,21 @@ const GiftCard = ({ item }) => {
 
 const StoreLogoCell = ({ item }) => {
   if (item.More) {
-    const MoreIcon = item.More;
-    return <MoreIcon width={58} height={58} />;
-  }
-
-  if (item.Icon) {
-    const Icon = item.Icon;
     return (
       <View style={styles.storeCell}>
-        <Icon width={58} height={28} />
+        <Text style={styles.morePlus}>+</Text>
+        <Text style={styles.moreText}>100+ Stores</Text>
       </View>
     );
   }
 
   return (
     <View style={styles.storeCell}>
-      <Text style={[styles.storeTextLogo, { color: item.color }]}>
-        {item.text}
-      </Text>
+      <Image
+        source={item.image}
+        style={{ width: '95%', height: '95%' }}
+        resizeMode="contain"
+      />
     </View>
   );
 };
@@ -239,7 +273,7 @@ const SlideThree = ({ onStart, onSkip }) => (
     <View style={styles.topStoresPanel}>
       <View style={styles.panelHeader}>
         <Text style={styles.panelTitle}>Top Stores</Text>
-        <Text style={styles.gridGlyph}>⌘</Text>
+        <TabGrid width={18} height={18} color="#8A95A3" />
       </View>
       <View style={styles.storeGrid}>
         {storeLogos.map(item => (
@@ -326,17 +360,15 @@ const OnboardingScreen = ({ navigation }) => {
           <SlideThree onStart={handleStart} onSkip={handleSkip} />
         </ScrollView>
         <Pagination activeIndex={activeIndex} />
-        <TouchableOpacity
-          activeOpacity={0.8}
-          onPress={handleNext}
-          style={[
-            styles.nextFab,
-            activeIndex === 1 && styles.nextFabPurple,
-            activeIndex === 2 && styles.nextFabOrange,
-          ]}
-        >
-          <ArrowCircleRight width={34} height={34} color="#FFFFFF" />
-        </TouchableOpacity>
+        {activeIndex < 2 && (
+          <TouchableOpacity
+            activeOpacity={0.8}
+            onPress={handleNext}
+            style={styles.nextFab}
+          >
+            <ArrowCircleRight width={34} height={34} color="#FFFFFF" />
+          </TouchableOpacity>
+        )}
       </View>
     </>
   );
