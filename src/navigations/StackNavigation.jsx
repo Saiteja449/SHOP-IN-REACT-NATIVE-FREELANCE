@@ -21,7 +21,7 @@ const StackNavigation = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName="LoginScreen"
+        initialRouteName="MainTabs"
       >
         <Stack.Screen name="OnboardingScreen" component={OnboardingScreen} />
         <Stack.Screen name="LoginScreen" component={LoginScreen} />

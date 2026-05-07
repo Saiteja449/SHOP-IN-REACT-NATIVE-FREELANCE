@@ -401,12 +401,12 @@ export const loginStyles = StyleSheet.create({
   },
   absCash: {
     position: 'absolute',
-    zIndex: 1,
+    zIndex: -1,
   },
   absDecor: {
     position: 'absolute',
-    opacity: 0.55,
-    zIndex: 0,
+    opacity: 0.3,
+    zIndex: -1,
   },
   brandWrap: {
     alignItems: 'center',
@@ -626,12 +626,11 @@ export const otpStyles = StyleSheet.create({
   },
   brandWrap: {
     alignItems: 'center',
-    marginTop: 12,
+    marginTop: 8,
   },
   brandMain: {
-    fontSize: 62,
+    fontSize: 28,
     color: '#111410',
-    letterSpacing: -1.3,
     fontFamily: 'Inter_18pt-ExtraBold',
   },
   brandAccent: {
@@ -645,13 +644,13 @@ export const otpStyles = StyleSheet.create({
     fontFamily: 'Inter_18pt-Medium',
   },
   lockWrap: {
-    marginTop: 28,
-    marginBottom: 18,
+    marginTop: 16,
+    marginBottom: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
   title: {
-    fontSize: 50,
+    fontSize: 24,
     color: '#1B3528',
     textAlign: 'center',
     fontFamily: 'Inter_18pt-Bold',
@@ -681,7 +680,7 @@ export const otpStyles = StyleSheet.create({
     fontSize: 14,
   },
   otpPrompt: {
-    marginTop: 20,
+    marginTop: 4,
     marginBottom: 8,
     fontSize: 14,
     textAlign: 'center',
@@ -690,9 +689,10 @@ export const otpStyles = StyleSheet.create({
   },
   otpRow: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginBottom: 16,
-    paddingHorizontal: 6,
+    justifyContent: 'center',
+    columnGap: 14,
+    marginBottom: 10,
+    marginTop: 10,
   },
   otpBox: {
     width: 53,
@@ -745,6 +745,8 @@ export const otpStyles = StyleSheet.create({
     paddingVertical: 12,
     flexDirection: 'row',
     alignItems: 'center',
+    alignSelf: "center",
+    width: "80%"
   },
   securityIconWrap: {
     width: 34,
@@ -770,7 +772,6 @@ export const otpStyles = StyleSheet.create({
     fontFamily: 'Inter_18pt-Regular',
   },
   verifyBtn: {
-    marginTop: 18,
     minHeight: 56,
     borderRadius: 12,
     flexDirection: 'row',

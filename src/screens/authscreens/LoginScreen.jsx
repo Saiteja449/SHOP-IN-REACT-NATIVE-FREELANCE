@@ -45,7 +45,7 @@ const featureData = [
   { title: 'Top 250+', subtitle: 'Brands', icon: BadgeStar },
 ];
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
   return (
     <>
       <StatusBar barStyle="dark-content" backgroundColor="#F8FBF3" />
@@ -136,7 +136,7 @@ const LoginScreen = () => {
           >
             <TouchableOpacity
               style={styles.continueBtn}
-              onPress={() => console.log('Continue')}
+              onPress={() => navigation.navigate('OTPScreen')}
             >
               <Text style={styles.continueText}>Continue</Text>
               <Text style={styles.continueArrow}>→</Text>
