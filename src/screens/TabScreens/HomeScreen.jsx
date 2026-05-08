@@ -91,7 +91,8 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#F8FBF3" />
-      <CustomHeader title="Home" showBack={false} />
+      <CustomHeader title="Home" showBack={false} showNotificationBell={true} />
+
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}

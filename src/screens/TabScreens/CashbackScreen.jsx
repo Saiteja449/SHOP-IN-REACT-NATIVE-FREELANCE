@@ -127,7 +127,8 @@ const CashbackScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
-      <CustomHeader title="Cashback" showBack={false} />
+      <CustomHeader title="Cashback" showBack={false} showNotificationBell={true} />
+
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.promoRow}>

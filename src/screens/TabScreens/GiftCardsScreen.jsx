@@ -266,7 +266,8 @@ const GiftCardsScreen = () => {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-      <CustomHeader title="Gift Cards" showBack={false} />
+      <CustomHeader title="Gift Cards" showBack={false} showNotificationBell={true} />
+
 
 
         {/* Top 3 Nav Cards */}

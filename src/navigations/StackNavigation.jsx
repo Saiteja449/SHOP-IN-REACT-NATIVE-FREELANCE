@@ -12,6 +12,7 @@ import SupportCenterScreen from '../screens/AccountScreens/SupportCenterScreen';
 import ReportProblemScreen from '../screens/AccountScreens/ReportProblemScreen';
 import SettingsScreen from '../screens/AccountScreens/SettingsScreen';
 import CashbackHistoryScreen from '../screens/AccountScreens/CashbackHistoryScreen';
+import NotificationsScreen from '../screens/AccountScreens/NotificationsScreen';
 
 
 const Stack = createStackNavigator();
@@ -42,6 +43,10 @@ const StackNavigation = () => {
         <Stack.Screen
           name="CashbackHistoryScreen"
           component={CashbackHistoryScreen}
+        />
+        <Stack.Screen
+          name="NotificationsScreen"
+          component={NotificationsScreen}
         />
 
       </Stack.Navigator>
