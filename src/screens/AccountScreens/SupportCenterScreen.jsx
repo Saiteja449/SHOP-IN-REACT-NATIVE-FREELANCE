@@ -48,13 +48,10 @@ const SupportCenterScreen = ({ navigation }) => {
   return (
     <View style={styles.screen}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
-
-      {/* Header */}
       <CustomHeader
         title="Support Center"
         onBackPress={() => navigation.goBack()}
       />
-
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}
@@ -64,8 +61,6 @@ const SupportCenterScreen = ({ navigation }) => {
         <Text style={styles.introSub}>
           Find answers or chat with our support team.
         </Text>
-
-        {/* Support Grid */}
         <View style={styles.supportGrid}>
           <TouchableOpacity style={styles.supportCard}>
             <View style={styles.supportIconBox}>
@@ -108,7 +103,6 @@ const SupportCenterScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        {/* Popular Topics */}
         <View style={styles.topicsSection}>
           <Text style={styles.popularTitle}>Popular Topics</Text>
 

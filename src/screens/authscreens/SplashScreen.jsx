@@ -5,7 +5,6 @@ const SplashScreen = ({ navigation }) => {
   const fadeAnim = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
-    // Wait for 2 seconds then fade out
     const timer = setTimeout(() => {
       Animated.timing(fadeAnim, {
         toValue: 0,

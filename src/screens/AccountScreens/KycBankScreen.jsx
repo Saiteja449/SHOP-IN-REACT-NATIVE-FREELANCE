@@ -15,7 +15,6 @@ import AccMail from '../../Icons/AccMail.svg';
 import AccPerson from '../../Icons/AccPerson.svg';
 import AccPhone from '../../Icons/AccPhone.svg';
 import AccUpi from '../../Icons/AccUpi.svg';
-import GcBack from '../../Icons/GcBack.svg';
 import GcChevronRight from '../../Icons/GcChevronRight.svg';
 import CustomHeader from '../../Components/CustomHeader';
 import {
@@ -28,19 +27,14 @@ const KycBankScreen = ({ navigation }) => {
   return (
     <View style={styles.screen}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
-
-      {/* Header */}
       <CustomHeader
         title="KYC & Bank Details"
         onBackPress={() => navigation.goBack()}
       />
-
-
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {/* Verification Status */}
         <View style={styles.statusCard}>
           <AccCheck width={40} height={40} color="#16A34A" />
           <View style={styles.statusTextContent}>
@@ -51,7 +45,6 @@ const KycBankScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Personal Details */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Personal Details</Text>
 
@@ -100,7 +93,6 @@ const KycBankScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* KYC Documents */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>KYC Documents</Text>
 
@@ -127,7 +119,6 @@ const KycBankScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Bank Details */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Bank Details</Text>
 
@@ -176,7 +167,6 @@ const KycBankScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Update Banner */}
         <View style={styles.updateBanner}>
           <View style={[styles.fieldIconBox, { backgroundColor: '#FFFFFF' }]}>
             <AccCalendar width={20} height={20} color="#16A34A" />

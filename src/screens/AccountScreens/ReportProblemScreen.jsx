@@ -51,22 +51,15 @@ const ReportProblemScreen = ({ navigation }) => {
 
   return (
     <View style={styles.screen}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
-
-      {/* Header */}
       <CustomHeader
         title="Report a Problem"
         onBackPress={() => navigation.goBack()}
       />
-
-
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
         <Text style={styles.introTitle}>Select the issue you are facing</Text>
-
-        {/* Issue List */}
         {issues.map((issue, index) => (
           <TouchableOpacity key={index} style={styles.issueCard}>
             <View style={styles.issueIconBox}>
@@ -80,7 +73,6 @@ const ReportProblemScreen = ({ navigation }) => {
           </TouchableOpacity>
         ))}
 
-        {/* Help Banner */}
         <View style={styles.helpBanner}>
           <View style={styles.helpHeader}>
             <AccHeadset width={24} height={24} color="#16A34A" />

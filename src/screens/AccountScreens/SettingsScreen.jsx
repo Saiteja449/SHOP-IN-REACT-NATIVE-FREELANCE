@@ -27,17 +27,12 @@ const SettingsScreen = ({ navigation }) => {
 
   return (
     <View style={styles.screen}>
-      <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
-
-      {/* Header */}
       <CustomHeader title="Settings" onBackPress={() => navigation.goBack()} />
-
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {/* Preferences */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Preferences</Text>
 
@@ -78,7 +73,6 @@ const SettingsScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Privacy & Security */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Privacy & Security</Text>
 
@@ -120,7 +114,6 @@ const SettingsScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
 
-        {/* Logout Section */}
         <TouchableOpacity style={[styles.logoutItem, { marginTop: 30 }]}>
           <View style={[styles.settingIconBox, { backgroundColor: '#FEF2F2' }]}>
             <AccLogout width={22} height={22} color="#EF4444" />

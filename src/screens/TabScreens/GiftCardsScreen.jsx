@@ -236,7 +236,14 @@ const GiftCardsScreen = ({ navigation }) => {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        <CustomHeader title="Gift Cards" showBack={false} showNotificationBell={true} showLogo={true} />
+        <CustomHeader 
+          title="Gift Cards" 
+          showBack={false} 
+          showNotificationBell={true} 
+          showLogo={true} 
+          titleColor="#4A2FD8"
+          iconColor="#4A2FD8"
+        />
 
         <LinearGradient
           colors={['#4A2FD8', '#6B47F5']}

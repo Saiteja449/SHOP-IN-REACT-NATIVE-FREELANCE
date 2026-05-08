@@ -9,15 +9,12 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import ArrowCircleRight from '../../Icons/ArrowCircleRight.svg';
 import OnboardingWalletHero from '../../Icons/OnboardingWalletHero.svg';
 import PercentTag from '../../Icons/PercentTag.svg';
 import ShieldCheck from '../../Icons/ShieldCheck.svg';
-import ShoppingBag from '../../Icons/ShoppingBag.svg';
 import TabGift from '../../Icons/TabGift.svg';
 import Truck from '../../Icons/Truck.svg';
 import Wallet from '../../Icons/Wallet.svg';
-import AccRupee from '../../Icons/AccRupee.svg';
 import CustomHeader from '../../Components/CustomHeader';
 import { homeStyles as styles } from '../../Styles/styles';
 
@@ -139,7 +136,7 @@ const HomeScreen = ({ navigation }) => {
             ))}
           </ScrollView>
 
-          <TouchableOpacity 
+          <TouchableOpacity
             activeOpacity={0.9}
             onPress={() => navigation.navigate('Cashback')}
           >
@@ -192,7 +189,7 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.allStoreRight}>
             <Text style={styles.allStoreTitle}>All in One Store</Text>
             <Text style={styles.allStoreSub}>Shop from 1000+ stores...</Text>
-            <TouchableOpacity 
+            <TouchableOpacity
               style={styles.secondaryBtn}
             >
               <Text style={styles.secondaryBtnText}>Explore All Stores</Text>
@@ -224,14 +221,23 @@ const HomeScreen = ({ navigation }) => {
                     styles.homeGiftTop,
                     card.kind === 'amazon' && { backgroundColor: '#000000' },
                     card.kind === 'flipkart' && { backgroundColor: '#C5E4FF' },
-                    card.kind === 'myntra' && { backgroundColor: '#FF4E6A' },
+                    card.kind === 'myntra' && { backgroundColor: '#ffebeeff' },
                     card.kind === 'zomato' && { backgroundColor: '#FFFFFF' },
-                    card.kind === 'google' && { backgroundColor: '#F1F1F1' },
+                    card.kind === 'google' && { backgroundColor: '#ffffffff' },
                   ]}
                 >
                   <Image
                     source={card.image}
-                    style={{ width: '60%', height: '60%' }}
+                    style={{
+                      width:
+                        card.kind === 'myntra' || card.kind === 'flipkart'
+                          ? '80%'
+                          : '60%',
+                      height:
+                        card.kind === 'myntra' || card.kind === 'flipkart'
+                          ? '80%'
+                          : '60%',
+                    }}
                     resizeMode="contain"
                   />
                 </View>
@@ -243,14 +249,14 @@ const HomeScreen = ({ navigation }) => {
             ))}
           </ScrollView>
 
-          <TouchableOpacity 
+          <TouchableOpacity
             style={styles.buyBtn}
             onPress={() => navigation.navigate('Gift Cards')}
           >
             <Text style={styles.buyBtnText}>Buy Gift Cards</Text>
             <Text style={styles.buyBtnText}>→</Text>
           </TouchableOpacity>
-          <TouchableOpacity 
+          <TouchableOpacity
             style={styles.sellBtn}
             onPress={() => navigation.navigate('SellGiftCardScreen')}
           >

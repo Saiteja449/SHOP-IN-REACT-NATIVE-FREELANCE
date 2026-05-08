@@ -10,16 +10,12 @@ import {
 import AccBank from '../../Icons/AccBank.svg';
 import AccCheck from '../../Icons/AccCheck.svg';
 
-import AccClock from '../../Icons/AccClock.svg';
 import AccFlag from '../../Icons/AccFlag.svg';
 import AccGear from '../../Icons/AccGear.svg';
-import AccGiftRef from '../../Icons/AccGiftRef.svg';
 import AccHeadset from '../../Icons/AccHeadset.svg';
-import AccHistory from '../../Icons/AccHistory.svg';
 import AccLogout from '../../Icons/AccLogout.svg';
 import AccRupee from '../../Icons/AccRupee.svg';
 import AccShieldKyc from '../../Icons/AccShieldKyc.svg';
-import GcBack from '../../Icons/GcBack.svg';
 import GcChevronRight from '../../Icons/GcChevronRight.svg';
 import CustomHeader from '../../Components/CustomHeader';
 import { accountStyles as styles } from '../../Styles/styles';
@@ -30,7 +26,6 @@ const AccountScreen = ({ navigation }) => {
     <View style={styles.screen}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
 
-      {/* Header */}
       <CustomHeader
         title="Profile"
         showBack={false}
@@ -43,13 +38,10 @@ const AccountScreen = ({ navigation }) => {
           </TouchableOpacity>
         )}
       />
-
-
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {/* Profile Info */}
         <View style={styles.profileSection}>
           <View style={styles.avatarContainer}>
             <Image
@@ -88,27 +80,10 @@ const AccountScreen = ({ navigation }) => {
               </View>
               <View style={styles.earningInfo}>
                 <Text style={styles.earningLabel}>My Wallet</Text>
-                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                <View style={styles.earningValueRow}>
                   <Text style={styles.earningValue}>₹2,450.75</Text>
-                  <View
-                    style={{
-                      backgroundColor: '#FFFBEB',
-                      paddingHorizontal: 8,
-                      paddingVertical: 2,
-                      borderRadius: 6,
-                      borderWidth: 1,
-                      borderColor: '#FEF3C7',
-                    }}
-                  >
-                    <Text
-                      style={{
-                        fontSize: 10,
-                        color: '#D97706',
-                        fontFamily: 'Inter_18pt-Bold',
-                      }}
-                    >
-                      ₹420.00 Pending
-                    </Text>
+                  <View style={styles.pendingBadge}>
+                    {/* <Text style={styles.pendingText}>₹420.00 Pending</Text> */}
                   </View>
                 </View>
               </View>
@@ -197,7 +172,6 @@ const AccountScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Logout Button */}
         <TouchableOpacity style={styles.logoutBtn}>
           <AccLogout width={20} height={20} color="#EF4444" />
           <Text style={styles.logoutText}>Logout</Text>

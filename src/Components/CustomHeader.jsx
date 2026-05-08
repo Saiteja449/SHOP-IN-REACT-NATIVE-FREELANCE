@@ -4,13 +4,14 @@ import GcBack from '../Icons/GcBack.svg';
 import AccBell from '../Icons/AccBell.svg';
 import { headerStyles as styles } from '../Styles/styles';
 
-
 const CustomHeader = ({ 
   title, 
   onBackPress, 
   showBack = true, 
   showNotificationBell = false,
   showLogo = false,
+  titleColor = '#111827',
+  iconColor = '#059669',
   RightComponent 
 }) => {
   const navigation = useNavigation();
@@ -20,7 +21,7 @@ const CustomHeader = ({
       <View style={styles.leftContainer}>
         {showBack ? (
           <TouchableOpacity onPress={onBackPress}>
-            <GcBack width={24} height={24} color="#059669" />
+            <GcBack width={24} height={24} color={iconColor} />
           </TouchableOpacity>
         ) : (
           showLogo && (
@@ -34,7 +35,7 @@ const CustomHeader = ({
       </View>
       
       <View style={styles.titleContainer}>
-        <Text style={styles.title}>{title}</Text>
+        <Text style={[styles.title, { color: titleColor }]}>{title}</Text>
       </View>
 
       <View style={styles.rightContainer}>
@@ -43,7 +44,7 @@ const CustomHeader = ({
         ) : (
           showNotificationBell && (
             <TouchableOpacity onPress={() => navigation.navigate('NotificationsScreen')}>
-              <AccBell width={24} height={24} color="#059669" />
+              <AccBell width={24} height={24} color={iconColor} />
             </TouchableOpacity>
           )
         )}

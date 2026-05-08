@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Image,
   KeyboardAvoidingView,
   Platform,
   ScrollView,
@@ -16,7 +17,6 @@ import CoinCircle from '../../Icons/CoinCircle.svg';
 import PercentTag from '../../Icons/PercentTag.svg';
 import ShieldCheck from '../../Icons/ShieldCheck.svg';
 import ShoppingBag from '../../Icons/ShoppingBag.svg';
-import Wallet from '../../Icons/Wallet.svg';
 import { loginStyles as styles } from '../../Styles/styles';
 
 const floatingMoney = [
@@ -61,28 +61,33 @@ const RegisterScreen = ({ navigation }) => {
             </View>
           ))}
 
-          {floatDecor.map((d, idx) => (
-            <View key={`reg-decor-${idx}`} style={[styles.absDecor, d]}>
-              {d.icon === 'coin' && <CoinCircle width={24} height={24} />}
-              {d.icon === 'percent' && <PercentTag width={24} height={24} />}
-              {d.icon === 'bag' && <ShoppingBag width={24} height={24} />}
-            </View>
-          ))}
+          {floatDecor.map((d, idx) => {
+            const size = 24;
+            return (
+              <View key={`reg-decor-${idx}`} style={[styles.absDecor, d]}>
+                {d.icon === 'coin' && <CoinCircle width={size} height={size} color="#8A9F7F" />}
+                {d.icon === 'percent' && <PercentTag width={size} height={size} color="#8A9F7F" />}
+                {d.icon === 'bag' && <ShoppingBag width={size} height={size} color="#8A9F7F" />}
+              </View>
+            );
+          })}
 
           <ScrollView
             contentContainerStyle={styles.content}
             showsVerticalScrollIndicator={false}
             keyboardShouldPersistTaps="handled"
           >
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Text style={styles.backArrow}>←</Text>
-            </TouchableOpacity>
 
             <View style={styles.brandWrap}>
               <Text style={styles.brandMain}>
                 SHOPTO<Text style={styles.brandAccent}>SAVE</Text>
               </Text>
               <Text style={styles.brandSub}>YOUR SAVINGS PARTNER</Text>
+              <Image
+                source={require('../../../assets/images/app icon.png')}
+                style={{ width: 100, height: 100, alignSelf: 'center' }}
+                resizeMode="contain"
+              />
             </View>
 
             <Text style={styles.welcomeTitle}>Create Account</Text>
@@ -112,7 +117,7 @@ const RegisterScreen = ({ navigation }) => {
               <View style={styles.phoneInput}>
                 <Text style={styles.countryCode}>+91</Text>
                 <TextInput
-                  style={styles.mobileInput}
+                  style={styles.phoneTextInput}
                   placeholder="Enter mobile number"
                   placeholderTextColor="#A0A0A0"
                   keyboardType="number-pad"
@@ -145,13 +150,6 @@ const RegisterScreen = ({ navigation }) => {
               </Text>
             </TouchableOpacity>
 
-            <View style={styles.cashbackCard}>
-              <Wallet width={74} height={52} />
-              <View style={styles.cashbackTextWrap}>
-                <Text style={styles.cashbackTitle}>Secure Payments</Text>
-                <Text style={styles.cashbackSub}>Your data is safe with us.</Text>
-              </View>
-            </View>
 
             <View style={styles.trustedRow}>
               <ShieldCheck width={16} height={16} />

@@ -12,7 +12,6 @@ import AccCheck from '../../Icons/AccCheck.svg';
 import AccDoc from '../../Icons/AccDoc.svg';
 import AccHistory from '../../Icons/AccHistory.svg';
 import AccRupee from '../../Icons/AccRupee.svg';
-import BrandAmazon from '../../Icons/BrandAmazon.svg';
 import ShieldCheck from '../../Icons/ShieldCheck.svg';
 import AccClock from '../../Icons/AccClock.svg';
 import { confirmationStyles as styles } from '../../Styles/styles';
@@ -24,7 +23,6 @@ const SellConfirmationScreen = ({ navigation }) => {
       <CustomHeader title="Sell Confirmation" onBackPress={() => navigation.goBack()} />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        {/* Success Header */}
         <View style={styles.successCard}>
           <View style={styles.checkCircle}>
             <AccCheck width={32} height={32} color="#FFFFFF" />
@@ -36,13 +34,11 @@ const SellConfirmationScreen = ({ navigation }) => {
           </Text>
         </View>
 
-        {/* Trust Banner */}
         <View style={styles.trustBanner}>
           <ShieldCheck width={18} height={18} color="#16A34A" />
           <Text style={styles.trustText}>Your transaction is 100% secure and safe with us.</Text>
         </View>
 
-        {/* Transaction Summary */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <AccDoc width={20} height={20} color="#4338CA" />
@@ -80,7 +76,6 @@ const SellConfirmationScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Payout Method */}
         <View style={styles.section}>
           <View style={styles.sectionHeader}>
             <AccBank width={20} height={20} color="#4338CA" />
@@ -109,7 +104,6 @@ const SellConfirmationScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* What happens next? */}
         <View style={styles.section}>
           <Text style={styles.stepperHeader}>What happens next?</Text>
           <View style={styles.stepper}>

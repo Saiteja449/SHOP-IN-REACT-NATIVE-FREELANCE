@@ -9,7 +9,6 @@ import {
   View,
 } from 'react-native';
 import CustomHeader from '../../Components/CustomHeader';
-import BrandAmazon from '../../Icons/BrandAmazon.svg';
 import Wallet from '../../Icons/Wallet.svg';
 import ShieldCheck from '../../Icons/ShieldCheck.svg';
 import AccPayment from '../../Icons/AccPayment.svg';
@@ -17,10 +16,6 @@ import AccUpi from '../../Icons/AccUpi.svg';
 import AccClock from '../../Icons/AccClock.svg';
 import AccCheck from '../../Icons/AccCheck.svg';
 import UpiGPay from '../../Icons/UpiGPay.svg.jsx';
-import UpiPhonePe from '../../Icons/UpiPhonePe.svg.jsx';
-import UpiPaytm from '../../Icons/UpiPaytm.svg.jsx';
-import UpiBhim from '../../Icons/UpiBhim.svg.jsx';
-import UpiAmazon from '../../Icons/UpiAmazon.svg.jsx';
 import { checkoutStyles as styles } from '../../Styles/styles';
 
 const GiftCardCheckoutScreen = ({ navigation }) => {
@@ -36,7 +31,6 @@ const GiftCardCheckoutScreen = ({ navigation }) => {
       />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        {/* Summary Card */}
         <View style={styles.summaryCard}>
           <View style={styles.productRow}>
             <View style={styles.brandLogoBox}>
@@ -109,7 +103,6 @@ const GiftCardCheckoutScreen = ({ navigation }) => {
 
         <Text style={styles.sectionTitle}>Select Payment Method</Text>
 
-        {/* Wallet Balance */}
         <TouchableOpacity 
           style={[styles.methodCard, paymentMethod === 'wallet' && styles.methodCardActive]}
           onPress={() => setPaymentMethod('wallet')}
@@ -146,7 +139,6 @@ const GiftCardCheckoutScreen = ({ navigation }) => {
           )}
         </TouchableOpacity>
 
-        {/* UPI */}
         <TouchableOpacity 
           style={[styles.methodCard, paymentMethod === 'upi' && styles.methodCardActive]}
           onPress={() => setPaymentMethod('upi')}
@@ -179,7 +171,6 @@ const GiftCardCheckoutScreen = ({ navigation }) => {
           )}
         </TouchableOpacity>
 
-        {/* Cards */}
         <TouchableOpacity 
           style={[styles.methodCard, paymentMethod === 'cards' && styles.methodCardActive]}
           onPress={() => setPaymentMethod('cards')}
@@ -207,7 +198,6 @@ const GiftCardCheckoutScreen = ({ navigation }) => {
           )}
         </TouchableOpacity>
 
-        {/* Safe Banner */}
         <View style={styles.safeBanner}>
           <ShieldCheck width={32} height={32} color="#4338CA" />
           <View style={styles.safeContent}>
@@ -217,7 +207,6 @@ const GiftCardCheckoutScreen = ({ navigation }) => {
         </View>
       </ScrollView>
 
-      {/* Footer */}
       <View style={styles.footer}>
         <View style={styles.payableRow}>
           <View>

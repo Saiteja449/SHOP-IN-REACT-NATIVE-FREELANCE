@@ -12,7 +12,6 @@ import AccCheck from '../../Icons/AccCheck.svg';
 import AccGiftRef from '../../Icons/AccGiftRef.svg';
 import AccPayment from '../../Icons/AccPayment.svg';
 import AccRupee from '../../Icons/AccRupee.svg';
-import BrandAmazon from '../../Icons/BrandAmazon.svg';
 import ShieldCheck from '../../Icons/ShieldCheck.svg';
 import StoreCart from '../../Icons/StoreCart.svg';
 import Wallet from '../../Icons/Wallet.svg';
@@ -25,7 +24,6 @@ const PurchaseSuccessScreen = ({ navigation }) => {
       <CustomHeader title="Purchase Success" onBackPress={() => navigation.goBack()} />
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
-        {/* Header */}
         <View style={styles.successHeader}>
           <View style={{ width: 60, height: 60, borderRadius: 30, backgroundColor: '#22C55E', alignItems: 'center', justifyContent: 'center' }}>
             <AccCheck width={32} height={32} color="#FFFFFF" />
@@ -34,7 +32,6 @@ const PurchaseSuccessScreen = ({ navigation }) => {
           <Text style={styles.successSub}>Your Amazon Gift Card has been purchased successfully.</Text>
         </View>
 
-        {/* Summary Card */}
         <View style={styles.summaryCard}>
           <View style={[styles.logoBox]}>
             <Image 
@@ -54,7 +51,6 @@ const PurchaseSuccessScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Promo Banner */}
         <View style={styles.promoCard}>
           <View style={styles.promoContent}>
             <Text style={styles.promoText}>Shop on our app &</Text>
@@ -67,7 +63,6 @@ const PurchaseSuccessScreen = ({ navigation }) => {
         </View>
 
 
-        {/* Process Grid */}
         <View style={styles.processGrid}>
           <View style={styles.processItem}>
             <View style={styles.processIconBox}>

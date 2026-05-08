@@ -60,7 +60,6 @@ const OTPScreen = ({ navigation }) => {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" backgroundColor="#F8FBF3" />
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}

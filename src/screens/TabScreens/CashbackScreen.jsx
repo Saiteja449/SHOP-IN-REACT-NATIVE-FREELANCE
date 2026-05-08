@@ -176,7 +176,6 @@ const CashbackScreen = () => {
           </View>
         </View>
 
-        {/* Frequent Stores */}
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Frequently Opened Stores</Text>
           <Text style={styles.viewAll}>View All</Text>
@@ -200,7 +199,6 @@ const CashbackScreen = () => {
           ))}
         </ScrollView>
 
-        {/* Categories */}
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>Categories You Choose</Text>
           <Text style={styles.viewAll}>View All</Text>
@@ -246,7 +244,6 @@ const CashbackScreen = () => {
           ))}
         </View>
 
-        {/* Bottom Banner */}
         <View style={styles.bottomBanner}>
           <HeroWalletCoins width={60} height={60} />
           <View style={styles.bannerCopy}>

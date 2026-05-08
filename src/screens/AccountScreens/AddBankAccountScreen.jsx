@@ -20,37 +20,34 @@ const AddBankAccountScreen = ({ navigation }) => {
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Account Information</Text>
-          
+
           <View style={styles.form}>
-            {/* Account Holder Name */}
             <View style={styles.inputGroup}>
               <Text style={styles.label}>Account Holder Name</Text>
               <View style={styles.inputWrap}>
-                <TextInput 
-                  placeholder="Enter account holder name" 
+                <TextInput
+                  placeholder="Enter account holder name"
                   placeholderTextColor="#9CA3AF"
                   style={styles.input}
                 />
               </View>
             </View>
 
-            {/* Bank Name */}
             <View style={styles.inputGroup}>
               <Text style={styles.label}>Bank Name</Text>
               <View style={styles.inputWrap}>
                 <TouchableOpacity style={styles.selectWrap}>
                   <Text style={styles.placeholder}>Select bank</Text>
-                  <Text style={{ color: '#9CA3AF' }}>⌄</Text>
+                  <Text style={styles.dropdownIcon}>⌄</Text>
                 </TouchableOpacity>
               </View>
             </View>
 
-            {/* Account Number */}
             <View style={styles.inputGroup}>
               <Text style={styles.label}>Account Number</Text>
               <View style={styles.inputWrap}>
-                <TextInput 
-                  placeholder="Enter account number" 
+                <TextInput
+                  placeholder="Enter account number"
                   placeholderTextColor="#9CA3AF"
                   style={styles.input}
                   keyboardType="number-pad"
@@ -58,12 +55,11 @@ const AddBankAccountScreen = ({ navigation }) => {
               </View>
             </View>
 
-            {/* IFSC Code */}
             <View style={styles.inputGroup}>
               <Text style={styles.label}>IFSC Code</Text>
               <View style={styles.inputWrap}>
-                <TextInput 
-                  placeholder="Enter IFSC code" 
+                <TextInput
+                  placeholder="Enter IFSC code"
                   placeholderTextColor="#9CA3AF"
                   style={styles.input}
                   autoCapitalize="characters"
@@ -74,12 +70,11 @@ const AddBankAccountScreen = ({ navigation }) => {
               </View>
             </View>
 
-            {/* Confirm Account Number */}
             <View style={styles.inputGroup}>
               <Text style={styles.label}>Confirm Account Number</Text>
               <View style={styles.inputWrap}>
-                <TextInput 
-                  placeholder="Re-enter account number" 
+                <TextInput
+                  placeholder="Re-enter account number"
                   placeholderTextColor="#9CA3AF"
                   style={styles.input}
                   keyboardType="number-pad"
@@ -88,7 +83,6 @@ const AddBankAccountScreen = ({ navigation }) => {
             </View>
           </View>
 
-          {/* Security Banner */}
           <View style={styles.securityBanner}>
             <ShieldCheck width={32} height={32} color="#16A34A" />
             <View style={styles.securityContent}>

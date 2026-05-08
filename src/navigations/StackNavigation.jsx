@@ -8,7 +8,6 @@ import SplashScreen from '../screens/Authscreens/SplashScreen';
 import LoginScreen from '../screens/Authscreens/LoginScreen';
 import OTPScreen from '../screens/Authscreens/OTPScreen';
 import RegisterScreen from '../screens/Authscreens/RegisterScreen';
-import ForgotPasswordScreen from '../screens/Authscreens/ForgotPasswordScreen';
 import EditProfileScreen from '../screens/AccountScreens/EditProfileScreen';
 import TabNavigations from './TabNavigations';
 import KycBankScreen from '../screens/AccountScreens/KycBankScreen';
@@ -41,10 +40,6 @@ const StackNavigation = () => {
         <Stack.Screen name="OTPScreen" component={OTPScreen} />
         <Stack.Screen name="RegisterScreen" component={RegisterScreen} />
         <Stack.Screen name="EditProfileScreen" component={EditProfileScreen} />
-        <Stack.Screen
-          name="ForgotPasswordScreen"
-          component={ForgotPasswordScreen}
-        />
         <Stack.Screen name="MainTabs" component={TabNavigations} />
         <Stack.Screen name="KycBankScreen" component={KycBankScreen} />
         <Stack.Screen

@@ -86,7 +86,7 @@ const LoginScreen = ({ navigation }) => {
           <Text style={styles.brandSub}>YOUR SAVINGS PARTNER</Text>
           <Image
             source={require('../../../assets/images/app icon.png')}
-            style={{ width: 120, height: 120, alignSelf: 'center', }}
+            style={{ width: 200, height: 200, alignSelf: 'center', }}
             resizeMode="contain"
           />
         </View>
@@ -116,7 +116,6 @@ const LoginScreen = ({ navigation }) => {
 
         <View style={styles.phoneInput}>
           <Text style={styles.countryCode}>+91</Text>
-          <Text style={styles.dropdown}>⌄</Text>
           <View style={styles.verticalDivider} />
           <TextInput
             style={styles.phoneTextInput}
@@ -126,12 +125,6 @@ const LoginScreen = ({ navigation }) => {
           />
         </View>
 
-        <TouchableOpacity
-          style={{ alignSelf: 'flex-end', marginTop: 8 }}
-          onPress={() => navigation.navigate('ForgotPasswordScreen')}
-        >
-          <Text style={[styles.welcomeSub, { marginBottom: 0 }]}>Forgot Password?</Text>
-        </TouchableOpacity>
 
         <LinearGradient
           colors={['#A6D36A', '#7DAF43']}

@@ -13,8 +13,6 @@ import GcGift from '../../Icons/GcGift.svg';
 import StoreCart from '../../Icons/StoreCart.svg';
 import Wallet from '../../Icons/Wallet.svg';
 import TabGift from '../../Icons/TabGift.svg';
-import TabHome from '../../Icons/TabHome.svg';
-import TabStore from '../../Icons/TabStore.svg';
 import { notificationStyles as styles } from '../../Styles/styles';
 
 const notifications = [
