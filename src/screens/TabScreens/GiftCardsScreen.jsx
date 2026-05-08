@@ -159,18 +159,19 @@ const TopNavCard = ({ item }) => {
   );
 };
 
-const CategoryCard = ({ item }) => {
+const CategoryCard = ({ item, onPress }) => {
   const Logo = item.Logo;
   return (
-    <View style={styles.categoryCard}>
+    <TouchableOpacity style={styles.categoryCard} onPress={onPress}>
       <View style={[styles.categoryLogoWrap, { backgroundColor: item.bg }]}>
         <Logo width={52} height={32} />
       </View>
       <Text style={styles.categoryBrandName}>{item.name}</Text>
       <Text style={styles.categoryOffer}>{item.offer}</Text>
-    </View>
+    </TouchableOpacity>
   );
 };
+
 
 const FilterItem = ({ item }) => {
   const Icon = item.Icon;
@@ -184,10 +185,10 @@ const FilterItem = ({ item }) => {
   );
 };
 
-const GiftCardItem = ({ item }) => {
+const GiftCardItem = ({ item, onPress }) => {
   const TypeIcon = item.TypeIcon;
   return (
-    <View style={styles.giftCardItem}>
+    <TouchableOpacity style={styles.giftCardItem} onPress={onPress}>
       {/* Thumbnail */}
       <View style={[styles.giftCardThumb, styles[item.thumbStyle]]}>
         <View
@@ -232,12 +233,14 @@ const GiftCardItem = ({ item }) => {
       <View style={styles.giftCardMenu}>
         <GcDotsMenu width={16} height={16} color="#C0BCCF" />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
+
 /* ─── main screen ───────────────────────────────────────────────────── */
-const GiftCardsScreen = () => {
+const GiftCardsScreen = ({ navigation }) => {
+
   const [activeTab, setActiveTab] = useState('buy');
 
   return (
@@ -357,9 +360,14 @@ const GiftCardsScreen = () => {
           contentContainerStyle={styles.categoryScroll}
         >
           {categories.map(item => (
-            <CategoryCard key={item.name} item={item} />
+            <CategoryCard 
+              key={item.name} 
+              item={item} 
+              onPress={() => navigation.navigate('GiftCardCheckoutScreen')}
+            />
           ))}
         </ScrollView>
+
 
         {/* Top Gift Cards Filters */}
         <View style={[styles.sectionHeader, { marginTop: 18 }]}>
@@ -379,9 +387,14 @@ const GiftCardsScreen = () => {
         <View style={styles.allGiftCardsSection}>
           <Text style={styles.allGiftCardsTitle}>All Gift Cards</Text>
           {giftCards.map(item => (
-            <GiftCardItem key={item.id} item={item} />
+            <GiftCardItem 
+              key={item.id} 
+              item={item} 
+              onPress={() => navigation.navigate('GiftCardCheckoutScreen')}
+            />
           ))}
         </View>
+
       </ScrollView>
     </View>
   );

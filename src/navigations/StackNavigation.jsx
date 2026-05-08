@@ -15,8 +15,9 @@ import CashbackHistoryScreen from '../screens/AccountScreens/CashbackHistoryScre
 import NotificationsScreen from '../screens/AccountScreens/NotificationsScreen';
 import BankDetailsScreen from '../screens/AccountScreens/BankDetailsScreen';
 import AddBankAccountScreen from '../screens/AccountScreens/AddBankAccountScreen';
-
-
+import GiftCardCheckoutScreen from '../screens/TabScreens/GiftCardCheckoutScreen';
+import SellConfirmationScreen from '../screens/TabScreens/SellConfirmationScreen';
+import PurchaseSuccessScreen from '../screens/TabScreens/PurchaseSuccessScreen';
 
 const Stack = createStackNavigator();
 
@@ -56,7 +57,21 @@ const StackNavigation = () => {
           name="AddBankAccountScreen"
           component={AddBankAccountScreen}
         />
+        <Stack.Screen
+          name="GiftCardCheckoutScreen"
+          component={GiftCardCheckoutScreen}
+        />
+        <Stack.Screen
+          name="SellConfirmationScreen"
+          component={SellConfirmationScreen}
+        />
+        <Stack.Screen
+          name="PurchaseSuccessScreen"
+          component={PurchaseSuccessScreen}
+        />
       </Stack.Navigator>
+
+
 
     </SafeAreaView>
   );
