@@ -6,17 +6,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import AccBank from '../../icons/AccBank.svg';
-import AccCalendar from '../../icons/AccCalendar.svg';
-import AccCardId from '../../icons/AccCardId.svg';
-import AccCheck from '../../icons/AccCheck.svg';
-import AccHistory from '../../icons/AccHistory.svg';
-import AccMail from '../../icons/AccMail.svg';
-import AccPerson from '../../icons/AccPerson.svg';
-import AccPhone from '../../icons/AccPhone.svg';
-import AccUpi from '../../icons/AccUpi.svg';
-import GcBack from '../../icons/GcBack.svg';
-import GcChevronRight from '../../icons/GcChevronRight.svg';
+import AccBank from '../../Icons/AccBank.svg';
+import AccCalendar from '../../Icons/AccCalendar.svg';
+import AccCardId from '../../Icons/AccCardId.svg';
+import AccCheck from '../../Icons/AccCheck.svg';
+import AccHistory from '../../Icons/AccHistory.svg';
+import AccMail from '../../Icons/AccMail.svg';
+import AccPerson from '../../Icons/AccPerson.svg';
+import AccPhone from '../../Icons/AccPhone.svg';
+import AccUpi from '../../Icons/AccUpi.svg';
+import GcBack from '../../Icons/GcBack.svg';
+import GcChevronRight from '../../Icons/GcChevronRight.svg';
 import {
   accountStyles as commonStyles,
   kycStyles as styles,

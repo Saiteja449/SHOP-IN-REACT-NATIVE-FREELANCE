@@ -6,12 +6,12 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import AccChat from '../../icons/AccChat.svg';
-import AccFaq from '../../icons/AccFaq.svg';
-import AccTicket from '../../icons/AccTicket.svg';
-import AccWhatsapp from '../../icons/AccWhatsapp.svg';
-import GcBack from '../../icons/GcBack.svg';
-import GcChevronRight from '../../icons/GcChevronRight.svg';
+import AccChat from '../../Icons/AccChat.svg';
+import AccFaq from '../../Icons/AccFaq.svg';
+import AccTicket from '../../Icons/AccTicket.svg';
+import AccWhatsapp from '../../Icons/AccWhatsapp.svg';
+import GcBack from '../../Icons/GcBack.svg';
+import GcChevronRight from '../../Icons/GcChevronRight.svg';
 import {
   accountStyles as commonStyles,
   supportStyles as styles,

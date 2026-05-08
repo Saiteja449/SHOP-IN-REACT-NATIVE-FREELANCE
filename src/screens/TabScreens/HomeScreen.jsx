@@ -9,14 +9,14 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import ArrowCircleRight from '../../icons/ArrowCircleRight.svg';
-import OnboardingWalletHero from '../../icons/OnboardingWalletHero.svg';
-import PercentTag from '../../icons/PercentTag.svg';
-import ShieldCheck from '../../icons/ShieldCheck.svg';
-import ShoppingBag from '../../icons/ShoppingBag.svg';
-import TabGift from '../../icons/TabGift.svg';
-import Truck from '../../icons/Truck.svg';
-import Wallet from '../../icons/Wallet.svg';
+import ArrowCircleRight from '../../Icons/ArrowCircleRight.svg';
+import OnboardingWalletHero from '../../Icons/OnboardingWalletHero.svg';
+import PercentTag from '../../Icons/PercentTag.svg';
+import ShieldCheck from '../../Icons/ShieldCheck.svg';
+import ShoppingBag from '../../Icons/ShoppingBag.svg';
+import TabGift from '../../Icons/TabGift.svg';
+import Truck from '../../Icons/Truck.svg';
+import Wallet from '../../Icons/Wallet.svg';
 import { homeStyles as styles } from '../../Styles/styles';
 
 const offers = [

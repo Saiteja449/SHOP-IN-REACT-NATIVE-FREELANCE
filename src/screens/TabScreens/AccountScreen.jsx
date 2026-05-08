@@ -7,18 +7,18 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import AccCheck from '../../icons/AccCheck.svg';
-import AccClock from '../../icons/AccClock.svg';
-import AccFlag from '../../icons/AccFlag.svg';
-import AccGear from '../../icons/AccGear.svg';
-import AccGiftRef from '../../icons/AccGiftRef.svg';
-import AccHeadset from '../../icons/AccHeadset.svg';
-import AccHistory from '../../icons/AccHistory.svg';
-import AccLogout from '../../icons/AccLogout.svg';
-import AccRupee from '../../icons/AccRupee.svg';
-import AccShieldKyc from '../../icons/AccShieldKyc.svg';
-import GcBack from '../../icons/GcBack.svg';
-import GcChevronRight from '../../icons/GcChevronRight.svg';
+import AccCheck from '../../Icons/AccCheck.svg';
+import AccClock from '../../Icons/AccClock.svg';
+import AccFlag from '../../Icons/AccFlag.svg';
+import AccGear from '../../Icons/AccGear.svg';
+import AccGiftRef from '../../Icons/AccGiftRef.svg';
+import AccHeadset from '../../Icons/AccHeadset.svg';
+import AccHistory from '../../Icons/AccHistory.svg';
+import AccLogout from '../../Icons/AccLogout.svg';
+import AccRupee from '../../Icons/AccRupee.svg';
+import AccShieldKyc from '../../Icons/AccShieldKyc.svg';
+import GcBack from '../../Icons/GcBack.svg';
+import GcChevronRight from '../../Icons/GcChevronRight.svg';
 import { accountStyles as styles } from '../../Styles/styles';
 
 const AccountScreen = ({ navigation }) => {

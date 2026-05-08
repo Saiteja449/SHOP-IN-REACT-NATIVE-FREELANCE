@@ -2,12 +2,12 @@ import React from 'react';
 import { Text, View } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import TabGift from '../icons/TabGift.svg';
-import TabGrid from '../icons/TabGrid.svg';
-import TabHome from '../icons/TabHome.svg';
-import TabStore from '../icons/TabStore.svg';
-import TabUser from '../icons/TabUser.svg';
-import AccRupee from '../icons/AccRupee.svg';
+import TabGift from '../Icons/TabGift.svg';
+import TabGrid from '../Icons/TabGrid.svg';
+import TabHome from '../Icons/TabHome.svg';
+import TabStore from '../Icons/TabStore.svg';
+import TabUser from '../Icons/TabUser.svg';
+import AccRupee from '../Icons/AccRupee.svg';
 import AccountScreen from '../screens/TabScreens/AccountScreen';
 import CategoriesScreen from '../screens/TabScreens/CategoriesScreen';
 import GiftCardsScreen from '../screens/TabScreens/GiftCardsScreen';

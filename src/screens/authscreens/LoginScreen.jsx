@@ -9,16 +9,16 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import ArrowCircleRight from '../../icons/ArrowCircleRight.svg';
-import BadgeStar from '../../icons/BadgeStar.svg';
-import Cart from '../../icons/Cart.svg';
-import CashNote from '../../icons/CashNote.svg';
-import CoinCircle from '../../icons/CoinCircle.svg';
-import PercentTag from '../../icons/PercentTag.svg';
-import ShieldCheck from '../../icons/ShieldCheck.svg';
-import ShoppingBag from '../../icons/ShoppingBag.svg';
-import Truck from '../../icons/Truck.svg';
-import Wallet from '../../icons/Wallet.svg';
+import ArrowCircleRight from '../../Icons/ArrowCircleRight.svg';
+import BadgeStar from '../../Icons/BadgeStar.svg';
+import Cart from '../../Icons/Cart.svg';
+import CashNote from '../../Icons/CashNote.svg';
+import CoinCircle from '../../Icons/CoinCircle.svg';
+import PercentTag from '../../Icons/PercentTag.svg';
+import ShieldCheck from '../../Icons/ShieldCheck.svg';
+import ShoppingBag from '../../Icons/ShoppingBag.svg';
+import Truck from '../../Icons/Truck.svg';
+import Wallet from '../../Icons/Wallet.svg';
 import { loginStyles as styles } from '../../Styles/styles';
 
 const floatingMoney = [

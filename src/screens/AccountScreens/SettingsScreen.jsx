@@ -7,13 +7,13 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import AccBell from '../../icons/AccBell.svg';
-import AccDoc from '../../icons/AccDoc.svg';
-import AccLock from '../../icons/AccLock.svg';
-import AccLogout from '../../icons/AccLogout.svg';
-import AccMoon from '../../icons/AccMoon.svg';
-import GcBack from '../../icons/GcBack.svg';
-import GcChevronRight from '../../icons/GcChevronRight.svg';
+import AccBell from '../../Icons/AccBell.svg';
+import AccDoc from '../../Icons/AccDoc.svg';
+import AccLock from '../../Icons/AccLock.svg';
+import AccLogout from '../../Icons/AccLogout.svg';
+import AccMoon from '../../Icons/AccMoon.svg';
+import GcBack from '../../Icons/GcBack.svg';
+import GcChevronRight from '../../Icons/GcChevronRight.svg';
 import {
   accountStyles as commonStyles,
   settingsStyles as styles,

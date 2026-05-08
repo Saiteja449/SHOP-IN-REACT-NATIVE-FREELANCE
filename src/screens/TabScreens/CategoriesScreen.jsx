@@ -9,16 +9,16 @@ import {
   View,
 } from 'react-native';
 
-import AllStoreBag from '../../icons/AllStoreBag.svg';
-import CategoryBeauty from '../../icons/CategoryBeauty.svg';
-import CategoryElectronics from '../../icons/CategoryElectronics.svg';
-import CategoryFashion from '../../icons/CategoryFashion.svg';
-import CategoryGrocery from '../../icons/CategoryGrocery.svg';
-import CategoryHome from '../../icons/CategoryHome.svg';
-import HeroWalletCoins from '../../icons/HeroWalletCoins.svg';
-import StoreSearch from '../../icons/StoreSearch.svg';
-import TabGift from '../../icons/TabGift.svg';
-import AccRupee from '../../icons/AccRupee.svg';
+import AllStoreBag from '../../Icons/AllStoreBag.svg';
+import CategoryBeauty from '../../Icons/CategoryBeauty.svg';
+import CategoryElectronics from '../../Icons/CategoryElectronics.svg';
+import CategoryFashion from '../../Icons/CategoryFashion.svg';
+import CategoryGrocery from '../../Icons/CategoryGrocery.svg';
+import CategoryHome from '../../Icons/CategoryHome.svg';
+import HeroWalletCoins from '../../Icons/HeroWalletCoins.svg';
+import StoreSearch from '../../Icons/StoreSearch.svg';
+import TabGift from '../../Icons/TabGift.svg';
+import AccRupee from '../../Icons/AccRupee.svg';
 import { cashbackStyles as styles } from '../../Styles/styles';
 
 const promoCards = [

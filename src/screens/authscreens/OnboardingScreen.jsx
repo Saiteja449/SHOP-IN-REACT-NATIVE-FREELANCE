@@ -11,19 +11,13 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import BrandAjio from '../../icons/BrandAjio.svg';
-import BrandAmazon from '../../icons/BrandAmazon.svg';
-import BrandFlipkart from '../../icons/BrandFlipkart.svg';
-import BrandMyntra from '../../icons/BrandMyntra.svg';
-import BrandTataCliq from '../../icons/BrandTataCliq.svg';
-import OnboardingDecal from '../../icons/OnboardingDecal.svg';
-import OnboardingGiftHero from '../../icons/OnboardingGiftHero.svg';
-import OnboardingSecureBadge from '../../icons/OnboardingSecureBadge.svg';
-import OnboardingStoreCard from '../../icons/OnboardingStoreCard.svg';
-import OnboardingWalletHero from '../../icons/OnboardingWalletHero.svg';
-import ShieldCheck from '../../icons/ShieldCheck.svg';
-import ArrowCircleRight from '../../icons/ArrowCircleRight.svg';
-import TabGrid from '../../icons/TabGrid.svg';
+import OnboardingDecal from '../../Icons/OnboardingDecal.svg';
+import OnboardingGiftHero from '../../Icons/OnboardingGiftHero.svg';
+import OnboardingSecureBadge from '../../Icons/OnboardingSecureBadge.svg';
+import OnboardingWalletHero from '../../Icons/OnboardingWalletHero.svg';
+import ShieldCheck from '../../Icons/ShieldCheck.svg';
+import ArrowCircleRight from '../../Icons/ArrowCircleRight.svg';
+import TabGrid from '../../Icons/TabGrid.svg';
 import { onboardingStyles as styles } from '../../Styles/styles';
 
 const { width } = Dimensions.get('window');

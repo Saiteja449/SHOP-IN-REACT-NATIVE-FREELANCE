@@ -6,13 +6,13 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import AccCardId from '../../icons/AccCardId.svg';
-import AccFlag from '../../icons/AccFlag.svg';
-import AccHeadset from '../../icons/AccHeadset.svg';
-import AccPayment from '../../icons/AccPayment.svg';
-import AccRupee from '../../icons/AccRupee.svg';
-import GcBack from '../../icons/GcBack.svg';
-import GcChevronRight from '../../icons/GcChevronRight.svg';
+import AccCardId from '../../Icons/AccCardId.svg';
+import AccFlag from '../../Icons/AccFlag.svg';
+import AccHeadset from '../../Icons/AccHeadset.svg';
+import AccPayment from '../../Icons/AccPayment.svg';
+import AccRupee from '../../Icons/AccRupee.svg';
+import GcBack from '../../Icons/GcBack.svg';
+import GcChevronRight from '../../Icons/GcChevronRight.svg';
 import {
   accountStyles as commonStyles,
   problemStyles as styles,

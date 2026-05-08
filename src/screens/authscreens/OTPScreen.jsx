@@ -11,14 +11,14 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-import CashNote from '../../icons/CashNote.svg';
-import CoinCircle from '../../icons/CoinCircle.svg';
-import PercentTag from '../../icons/PercentTag.svg';
-import ShieldCheck from '../../icons/ShieldCheck.svg';
-import ShoppingBag from '../../icons/ShoppingBag.svg';
-import OtpShieldLock from '../../icons/OtpShieldLock.svg';
-import Laurel from '../../icons/Laurel.svg';
-import Pencil from '../../icons/Pencil.svg';
+import CashNote from '../../Icons/CashNote.svg';
+import CoinCircle from '../../Icons/CoinCircle.svg';
+import PercentTag from '../../Icons/PercentTag.svg';
+import ShieldCheck from '../../Icons/ShieldCheck.svg';
+import ShoppingBag from '../../Icons/ShoppingBag.svg';
+import OtpShieldLock from '../../Icons/OtpShieldLock.svg';
+import Laurel from '../../Icons/Laurel.svg';
+import Pencil from '../../Icons/Pencil.svg';
 import { otpStyles as styles } from '../../Styles/styles';
 
 const floatingMoney = [
