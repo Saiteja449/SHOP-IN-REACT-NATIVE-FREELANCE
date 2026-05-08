@@ -7,7 +7,9 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import AccBank from '../../Icons/AccBank.svg';
 import AccCheck from '../../Icons/AccCheck.svg';
+
 import AccClock from '../../Icons/AccClock.svg';
 import AccFlag from '../../Icons/AccFlag.svg';
 import AccGear from '../../Icons/AccGear.svg';
@@ -148,6 +150,21 @@ const AccountScreen = ({ navigation }) => {
               </View>
               <GcChevronRight width={20} height={20} color="#9CA3AF" />
             </TouchableOpacity>
+
+            <TouchableOpacity
+              style={styles.menuItem}
+              onPress={() => navigation.navigate('BankDetailsScreen')}
+            >
+              <View style={styles.menuIconBox}>
+                <AccBank width={24} height={24} color="#4B5563" />
+              </View>
+              <View style={styles.menuTextContent}>
+                <Text style={styles.menuLabel}>Bank Accounts</Text>
+                <Text style={styles.menuSub}>Manage your saved bank accounts</Text>
+              </View>
+              <GcChevronRight width={20} height={20} color="#9CA3AF" />
+            </TouchableOpacity>
+
 
             <TouchableOpacity style={styles.menuItem}>
               <View style={styles.menuIconBox}>

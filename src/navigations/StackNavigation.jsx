@@ -13,6 +13,9 @@ import ReportProblemScreen from '../screens/AccountScreens/ReportProblemScreen';
 import SettingsScreen from '../screens/AccountScreens/SettingsScreen';
 import CashbackHistoryScreen from '../screens/AccountScreens/CashbackHistoryScreen';
 import NotificationsScreen from '../screens/AccountScreens/NotificationsScreen';
+import BankDetailsScreen from '../screens/AccountScreens/BankDetailsScreen';
+import AddBankAccountScreen from '../screens/AccountScreens/AddBankAccountScreen';
+
 
 
 const Stack = createStackNavigator();
@@ -48,8 +51,13 @@ const StackNavigation = () => {
           name="NotificationsScreen"
           component={NotificationsScreen}
         />
-
+        <Stack.Screen name="BankDetailsScreen" component={BankDetailsScreen} />
+        <Stack.Screen
+          name="AddBankAccountScreen"
+          component={AddBankAccountScreen}
+        />
       </Stack.Navigator>
+
     </SafeAreaView>
   );
 };
