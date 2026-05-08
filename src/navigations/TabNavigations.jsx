@@ -9,7 +9,8 @@ import TabStore from '../Icons/TabStore.svg';
 import TabUser from '../Icons/TabUser.svg';
 import AccRupee from '../Icons/AccRupee.svg';
 import AccountScreen from '../screens/TabScreens/AccountScreen';
-import CategoriesScreen from '../screens/TabScreens/CategoriesScreen';
+import CashbackScreen from '../screens/TabScreens/CashbackScreen';
+
 import GiftCardsScreen from '../screens/TabScreens/GiftCardsScreen';
 import HomeScreen from '../screens/TabScreens/HomeScreen';
 import StoresScreen from '../screens/TabScreens/StoresScreen';
@@ -32,7 +33,7 @@ const getScreenOptions = ({ route }) => ({
   tabBarIcon: ({ focused }) => {
     if (route.name === 'Home') return renderIcon(TabHome, focused);
     if (route.name === 'Cashback') return renderIcon(AccRupee, focused, true);
-    if (route.name === 'Categories') return renderIcon(TabGrid, focused);
+
     if (route.name === 'Gift Cards') return renderIcon(TabGift, focused);
     return renderIcon(TabUser, focused);
   },
@@ -52,10 +53,11 @@ const TabNavigations = () => {
   return (
     <Tab.Navigator initialRouteName="Home" screenOptions={getScreenOptions}>
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Categories" component={CategoriesScreen} />
+      <Tab.Screen name="Cashback" component={CashbackScreen} />
       <Tab.Screen name="Gift Cards" component={GiftCardsScreen} />
       <Tab.Screen name="Account" component={AccountScreen} />
     </Tab.Navigator>
+
   );
 };
 

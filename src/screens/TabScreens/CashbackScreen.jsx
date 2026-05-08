@@ -19,7 +19,9 @@ import HeroWalletCoins from '../../Icons/HeroWalletCoins.svg';
 import StoreSearch from '../../Icons/StoreSearch.svg';
 import TabGift from '../../Icons/TabGift.svg';
 import AccRupee from '../../Icons/AccRupee.svg';
+import CustomHeader from '../../Components/CustomHeader';
 import { cashbackStyles as styles } from '../../Styles/styles';
+
 
 const promoCards = [
   {
@@ -121,10 +123,12 @@ const topStores = [
   { name: '& More\n1000+ Stores', offer: 'Upto 5%', isMore: true },
 ];
 
-const CategoriesScreen = () => {
+const CashbackScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
+      <CustomHeader title="Cashback" showBack={false} />
+
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
         <View style={styles.promoRow}>
           {promoCards.map((item, idx) => (
@@ -263,4 +267,4 @@ const CategoriesScreen = () => {
   );
 };
 
-export default CategoriesScreen;
+export default CashbackScreen;

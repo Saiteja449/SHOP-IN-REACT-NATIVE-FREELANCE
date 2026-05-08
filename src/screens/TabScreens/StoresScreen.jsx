@@ -22,7 +22,9 @@ import StorePromoBag from '../../Icons/StorePromoBag.svg';
 import StorePromoCashback from '../../Icons/StorePromoCashback.svg';
 import StorePromoGift from '../../Icons/StorePromoGift.svg';
 import StoreSearch from '../../Icons/StoreSearch.svg';
+import CustomHeader from '../../Components/CustomHeader';
 import { storeStyles as styles } from '../../Styles/styles';
+
 
 const promoCards = [
   {
@@ -102,23 +104,7 @@ const patternItems = [
   { top: 724, right: 226, rotate: '16deg' },
 ];
 
-const PhoneStatus = () => (
-  <View style={styles.statusRow}>
-    <Text style={styles.timeText}>9:41</Text>
-    <View style={styles.statusRight}>
-      <View style={styles.signalDots}>
-        <View style={[styles.signalDot, styles.signalOne]} />
-        <View style={[styles.signalDot, styles.signalTwo]} />
-        <View style={[styles.signalDot, styles.signalThree]} />
-        <View style={[styles.signalDot, styles.signalFour]} />
-      </View>
-      <Text style={styles.wifiText}>⌁</Text>
-      <View style={styles.battery}>
-        <View style={styles.batteryFill} />
-      </View>
-    </View>
-  </View>
-);
+
 
 const PatternLayer = () => (
   <>
@@ -206,28 +192,24 @@ const StoresScreen = () => {
         contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
       >
-        <PhoneStatus />
-
-        <View style={styles.headerRow}>
-          <StoreMenu width={32} height={32} color="#0C1116" />
-          <View style={styles.headerCopy}>
-            <Text style={styles.title}>All Stores</Text>
-            <Text style={styles.subtitle}>
-              Shop from 1000+ stores and earn cashback
-            </Text>
-          </View>
-          <View style={styles.headerActions}>
-            <View style={styles.circleAction}>
-              <StoreSearch width={30} height={30} color="#111827" />
-            </View>
-            <View style={styles.circleAction}>
-              <StoreCart width={35} height={35} color="#111827" />
-              <View style={styles.cartBadge}>
-                <Text style={styles.cartBadgeText}>3</Text>
+        <CustomHeader
+          title="All Stores"
+          showBack={false}
+          RightComponent={() => (
+            <View style={styles.headerActions}>
+              <View style={styles.circleAction}>
+                <StoreSearch width={24} height={24} color="#111827" />
+              </View>
+              <View style={styles.circleAction}>
+                <StoreCart width={28} height={28} color="#111827" />
+                <View style={styles.cartBadge}>
+                  <Text style={styles.cartBadgeText}>3</Text>
+                </View>
               </View>
             </View>
-          </View>
-        </View>
+          )}
+        />
+
 
         <View style={styles.promoRow}>
           {promoCards.map(item => (

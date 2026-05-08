@@ -12,10 +12,12 @@ import AccTicket from '../../Icons/AccTicket.svg';
 import AccWhatsapp from '../../Icons/AccWhatsapp.svg';
 import GcBack from '../../Icons/GcBack.svg';
 import GcChevronRight from '../../Icons/GcChevronRight.svg';
+import CustomHeader from '../../Components/CustomHeader';
 import {
   accountStyles as commonStyles,
   supportStyles as styles,
 } from '../../Styles/styles';
+
 
 const SupportCenterScreen = ({ navigation }) => {
   const topics = [
@@ -31,16 +33,11 @@ const SupportCenterScreen = ({ navigation }) => {
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
 
       {/* Header */}
-      <View style={commonStyles.header}>
-        <TouchableOpacity
-          style={commonStyles.backBtn}
-          onPress={() => navigation.goBack()}
-        >
-          <GcBack width={24} height={24} color="#059669" />
-        </TouchableOpacity>
-        <Text style={commonStyles.headerTitle}>Support Center</Text>
-        <View style={{ width: 34 }} />
-      </View>
+      <CustomHeader
+        title="Support Center"
+        onBackPress={() => navigation.goBack()}
+      />
+
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}

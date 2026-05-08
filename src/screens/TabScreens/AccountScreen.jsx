@@ -19,7 +19,9 @@ import AccRupee from '../../Icons/AccRupee.svg';
 import AccShieldKyc from '../../Icons/AccShieldKyc.svg';
 import GcBack from '../../Icons/GcBack.svg';
 import GcChevronRight from '../../Icons/GcChevronRight.svg';
+import CustomHeader from '../../Components/CustomHeader';
 import { accountStyles as styles } from '../../Styles/styles';
+
 
 const AccountScreen = ({ navigation }) => {
   return (
@@ -27,18 +29,18 @@ const AccountScreen = ({ navigation }) => {
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
 
       {/* Header */}
-      <View style={styles.header}>
-        <TouchableOpacity style={styles.backBtn}>
-          <GcBack width={24} height={24} color="#059669" />
-        </TouchableOpacity>
-        <Text style={styles.headerTitle}>Profile</Text>
-        <TouchableOpacity
-          style={styles.settingsBtn}
-          onPress={() => navigation.navigate('SettingsScreen')}
-        >
-          <AccGear width={24} height={24} color="#059669" />
-        </TouchableOpacity>
-      </View>
+      <CustomHeader
+        title="Profile"
+        showBack={false}
+        RightComponent={() => (
+          <TouchableOpacity
+            onPress={() => navigation.navigate('SettingsScreen')}
+          >
+            <AccGear width={24} height={24} color="#059669" />
+          </TouchableOpacity>
+        )}
+      />
+
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}
@@ -72,31 +74,42 @@ const AccountScreen = ({ navigation }) => {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Earnings Overview</Text>
           <View style={styles.earningsCard}>
-            <TouchableOpacity style={styles.earningItem}>
+            <TouchableOpacity
+              style={styles.earningItem}
+              onPress={() => navigation.navigate('CashbackHistoryScreen')}
+            >
               <View style={styles.earningIconBox}>
                 <AccRupee width={22} height={22} color="#059669" />
               </View>
               <View style={styles.earningInfo}>
-                <Text style={styles.earningLabel}>Total Cashback Earned</Text>
-                <Text style={styles.earningValue}>₹2,450.75</Text>
+                <Text style={styles.earningLabel}>My Cashback</Text>
+                <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
+                  <Text style={styles.earningValue}>₹2,450.75</Text>
+                  <View
+                    style={{
+                      backgroundColor: '#FFFBEB',
+                      paddingHorizontal: 8,
+                      paddingVertical: 2,
+                      borderRadius: 6,
+                      borderWidth: 1,
+                      borderColor: '#FEF3C7',
+                    }}
+                  >
+                    <Text
+                      style={{
+                        fontSize: 10,
+                        color: '#D97706',
+                        fontFamily: 'Inter_18pt-Bold',
+                      }}
+                    >
+                      ₹420.00 Pending
+                    </Text>
+                  </View>
+                </View>
               </View>
               <GcChevronRight width={18} height={18} color="#9CA3AF" />
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.earningItem}>
-              <View
-                style={[styles.earningIconBox, { backgroundColor: '#FFFBEB' }]}
-              >
-                <AccClock width={22} height={22} color="#F59E0B" />
-              </View>
-              <View style={styles.earningInfo}>
-                <Text style={styles.earningLabel}>Pending Cashback</Text>
-                <Text style={[styles.earningValue, styles.pendingValue]}>
-                  ₹420.00
-                </Text>
-              </View>
-              <GcChevronRight width={18} height={18} color="#9CA3AF" />
-            </TouchableOpacity>
 
             <TouchableOpacity
               style={[styles.earningItem, { borderBottomWidth: 0 }]}

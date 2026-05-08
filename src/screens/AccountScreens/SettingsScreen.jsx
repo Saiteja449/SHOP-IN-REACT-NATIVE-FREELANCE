@@ -14,10 +14,12 @@ import AccLogout from '../../Icons/AccLogout.svg';
 import AccMoon from '../../Icons/AccMoon.svg';
 import GcBack from '../../Icons/GcBack.svg';
 import GcChevronRight from '../../Icons/GcChevronRight.svg';
+import CustomHeader from '../../Components/CustomHeader';
 import {
   accountStyles as commonStyles,
   settingsStyles as styles,
 } from '../../Styles/styles';
+
 
 const SettingsScreen = ({ navigation }) => {
   const [notifications, setNotifications] = useState(true);
@@ -28,16 +30,8 @@ const SettingsScreen = ({ navigation }) => {
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
 
       {/* Header */}
-      <View style={commonStyles.header}>
-        <TouchableOpacity
-          style={commonStyles.backBtn}
-          onPress={() => navigation.goBack()}
-        >
-          <GcBack width={24} height={24} color="#059669" />
-        </TouchableOpacity>
-        <Text style={commonStyles.headerTitle}>Settings</Text>
-        <View style={{ width: 34 }} />
-      </View>
+      <CustomHeader title="Settings" onBackPress={() => navigation.goBack()} />
+
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}

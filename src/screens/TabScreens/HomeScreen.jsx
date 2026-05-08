@@ -17,7 +17,9 @@ import ShoppingBag from '../../Icons/ShoppingBag.svg';
 import TabGift from '../../Icons/TabGift.svg';
 import Truck from '../../Icons/Truck.svg';
 import Wallet from '../../Icons/Wallet.svg';
+import CustomHeader from '../../Components/CustomHeader';
 import { homeStyles as styles } from '../../Styles/styles';
+
 
 const offers = [
   {
@@ -89,6 +91,8 @@ const HomeScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#F8FBF3" />
+      <CustomHeader title="Home" showBack={false} />
+
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}

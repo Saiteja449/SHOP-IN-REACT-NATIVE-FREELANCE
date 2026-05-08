@@ -1979,7 +1979,42 @@ export const giftCardStyles = StyleSheet.create({
   },
 });
 
+export const headerStyles = StyleSheet.create({
+  container: {
+    height: 56,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    backgroundColor: '#FFFFFF',
+    borderBottomWidth: 1,
+    borderBottomColor: '#F3F4F6',
+  },
+  leftContainer: {
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+  },
+  titleContainer: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  title: {
+    fontSize: 18,
+    fontFamily: 'Inter_18pt-Bold',
+    color: '#059669',
+  },
+  rightContainer: {
+    width: 40,
+    height: 40,
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+  },
+});
+
 export const accountStyles = StyleSheet.create({
+
   screen: {
     flex: 1,
     backgroundColor: '#FFFFFF',
@@ -2835,3 +2870,234 @@ export const cashbackStyles = StyleSheet.create({
     fontFamily: 'Inter_18pt-Bold',
   },
 });
+
+export const cashbackHistoryStyles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F3F4F6',
+  },
+  headerTitle: {
+    fontSize: 18,
+    fontFamily: 'Inter_18pt-Bold',
+    color: '#059669',
+  },
+  summaryRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 16,
+    gap: 10,
+  },
+  summaryCard: {
+    flex: 1,
+    padding: 12,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  pendingCard: {
+    backgroundColor: '#FFFBEB',
+    borderWidth: 1,
+    borderColor: '#FEF3C7',
+  },
+  confirmedCard: {
+    backgroundColor: '#F0FDF4',
+    borderWidth: 1,
+    borderColor: '#DCFCE7',
+  },
+  rejectedCard: {
+    backgroundColor: '#FEF2F2',
+    borderWidth: 1,
+    borderColor: '#FEE2E2',
+  },
+  summaryLabel: {
+    fontSize: 12,
+    fontFamily: 'Inter_18pt-Bold',
+    marginBottom: 4,
+  },
+  summaryValue: {
+    fontSize: 16,
+    fontFamily: 'Inter_18pt-ExtraBold',
+    color: '#111827',
+  },
+  summarySub: {
+    fontSize: 10,
+    fontFamily: 'Inter_18pt-Medium',
+    color: '#6B7280',
+    marginTop: 2,
+  },
+  searchFilterRow: {
+    flexDirection: 'row',
+    paddingHorizontal: 16,
+    gap: 10,
+    marginBottom: 16,
+  },
+  searchBox: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#F9FAFB',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    height: 40,
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
+  },
+  searchInput: {
+    flex: 1,
+    marginLeft: 8,
+    fontSize: 14,
+    color: '#111827',
+    fontFamily: 'Inter_18pt-Regular',
+  },
+  filterBtn: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#FFFFFF',
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+    height: 40,
+    gap: 6,
+  },
+  filterText: {
+    fontSize: 14,
+    fontFamily: 'Inter_18pt-Medium',
+    color: '#374151',
+  },
+  tabsScroll: {
+    paddingHorizontal: 16,
+    marginBottom: 16,
+  },
+  tab: {
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    borderRadius: 8,
+    marginRight: 8,
+    borderWidth: 1,
+    borderColor: '#E5E7EB',
+    backgroundColor: '#FFFFFF',
+  },
+  tabActive: {
+    backgroundColor: '#F0FDF4',
+    borderColor: '#059669',
+  },
+  tabText: {
+    fontSize: 13,
+    fontFamily: 'Inter_18pt-Medium',
+    color: '#4B5563',
+  },
+  tabTextActive: {
+    color: '#059669',
+    fontFamily: 'Inter_18pt-Bold',
+  },
+  listHeader: {
+    flexDirection: 'row',
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    backgroundColor: '#F9FAFB',
+    borderBottomWidth: 1,
+    borderBottomColor: '#E5E7EB',
+  },
+  headerCol: {
+    fontSize: 11,
+    fontFamily: 'Inter_18pt-Bold',
+    color: '#6B7280',
+  },
+  transactionItem: {
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderBottomWidth: 1,
+    borderBottomColor: '#F3F4F6',
+  },
+  mainRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  dateCol: {
+    width: 80,
+  },
+  dateText: {
+    fontSize: 11,
+    fontFamily: 'Inter_18pt-Bold',
+    color: '#374151',
+  },
+  timeText: {
+    fontSize: 10,
+    fontFamily: 'Inter_18pt-Medium',
+    color: '#6B7280',
+    marginTop: 2,
+  },
+  storeCol: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
+  storeLogo: {
+    width: 32,
+    height: 32,
+    borderRadius: 6,
+    borderWidth: 1,
+    borderColor: '#F3F4F6',
+  },
+  storeName: {
+    fontSize: 12,
+    fontFamily: 'Inter_18pt-Bold',
+    color: '#111827',
+  },
+  orderId: {
+    fontSize: 10,
+    fontFamily: 'Inter_18pt-Medium',
+    color: '#6B7280',
+    marginTop: 2,
+  },
+  amountCol: {
+    width: 80,
+    alignItems: 'flex-end',
+  },
+  amountText: {
+    fontSize: 13,
+    fontFamily: 'Inter_18pt-ExtraBold',
+  },
+  statusCol: {
+    width: 80,
+    alignItems: 'center',
+  },
+  statusBadge: {
+    paddingHorizontal: 8,
+    paddingVertical: 4,
+    borderRadius: 6,
+  },
+  statusText: {
+    fontSize: 10,
+    fontFamily: 'Inter_18pt-Bold',
+  },
+  chevronCol: {
+    width: 20,
+    alignItems: 'flex-end',
+  },
+  reasonRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginTop: 8,
+    paddingLeft: 4,
+    gap: 4,
+  },
+  reasonText: {
+    fontSize: 10,
+    fontFamily: 'Inter_18pt-Medium',
+    color: '#6B7280',
+  },
+});
+

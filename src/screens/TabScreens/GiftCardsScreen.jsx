@@ -26,7 +26,9 @@ import GcRecharge from '../../Icons/GcRecharge.svg';
 import GcSearch from '../../Icons/GcSearch.svg';
 import GcSell from '../../Icons/GcSell.svg';
 import GcTravel from '../../Icons/GcTravel.svg';
+import CustomHeader from '../../Components/CustomHeader';
 import { giftCardStyles as styles } from '../../Styles/styles';
+
 
 /* ─── data ─────────────────────────────────────────────────────────── */
 const topNavItems = [
@@ -135,23 +137,7 @@ const bgPatterns = [
 ];
 
 /* ─── sub-components ────────────────────────────────────────────────── */
-const PhoneStatus = () => (
-  <View style={styles.statusRow}>
-    <Text style={styles.timeText}>9:41</Text>
-    <View style={styles.statusRight}>
-      <View style={styles.signalDots}>
-        <View style={[styles.signalDot, styles.signalOne]} />
-        <View style={[styles.signalDot, styles.signalTwo]} />
-        <View style={[styles.signalDot, styles.signalThree]} />
-        <View style={[styles.signalDot, styles.signalFour]} />
-      </View>
-      <Text style={styles.wifiText}>⌁</Text>
-      <View style={styles.batteryOuter}>
-        <View style={styles.batteryInner} />
-      </View>
-    </View>
-  </View>
-);
+
 
 const TopNavCard = ({ item }) => {
   const Icon = item.Icon;
@@ -280,16 +266,8 @@ const GiftCardsScreen = () => {
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-        {/* Status */}
-        <PhoneStatus />
+      <CustomHeader title="Gift Cards" showBack={false} />
 
-        {/* Header */}
-        <View style={styles.headerRow}>
-          <View style={styles.backBtn}>
-            <GcBack width={24} height={24} color="#1A1240" />
-          </View>
-          <Text style={styles.headerTitle}>Gift Cards</Text>
-        </View>
 
         {/* Top 3 Nav Cards */}
         <View style={styles.topNavRow}>

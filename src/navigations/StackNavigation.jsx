@@ -11,6 +11,8 @@ import KycBankScreen from '../screens/AccountScreens/KycBankScreen';
 import SupportCenterScreen from '../screens/AccountScreens/SupportCenterScreen';
 import ReportProblemScreen from '../screens/AccountScreens/ReportProblemScreen';
 import SettingsScreen from '../screens/AccountScreens/SettingsScreen';
+import CashbackHistoryScreen from '../screens/AccountScreens/CashbackHistoryScreen';
+
 
 const Stack = createStackNavigator();
 
@@ -37,6 +39,11 @@ const StackNavigation = () => {
           component={ReportProblemScreen}
         />
         <Stack.Screen name="SettingsScreen" component={SettingsScreen} />
+        <Stack.Screen
+          name="CashbackHistoryScreen"
+          component={CashbackHistoryScreen}
+        />
+
       </Stack.Navigator>
     </SafeAreaView>
   );
