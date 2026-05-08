@@ -34,6 +34,7 @@ const AccountScreen = ({ navigation }) => {
       <CustomHeader
         title="Profile"
         showBack={false}
+        showLogo={true}
         RightComponent={() => (
           <TouchableOpacity
             onPress={() => navigation.navigate('SettingsScreen')}
@@ -66,25 +67,27 @@ const AccountScreen = ({ navigation }) => {
           <Text style={styles.userPhone}>+91 98765 43210</Text>
           <Text style={styles.userEmail}>rahul.sharma@email.com</Text>
 
-          <TouchableOpacity style={styles.editProfileBtn}>
+          <TouchableOpacity 
+            style={styles.editProfileBtn}
+            onPress={() => navigation.navigate('EditProfileScreen')}
+          >
             <Text style={styles.editProfileText}>Edit Profile</Text>
             <Text style={{ color: '#059669' }}>✎</Text>
           </TouchableOpacity>
         </View>
 
-        {/* Earnings Overview */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Earnings Overview</Text>
           <View style={styles.earningsCard}>
             <TouchableOpacity
-              style={styles.earningItem}
-              onPress={() => navigation.navigate('CashbackHistoryScreen')}
+              style={[styles.earningItem, { borderBottomWidth: 0 }]}
+              onPress={() => navigation.navigate('WalletScreen')}
             >
               <View style={styles.earningIconBox}>
                 <AccRupee width={22} height={22} color="#059669" />
               </View>
               <View style={styles.earningInfo}>
-                <Text style={styles.earningLabel}>My Cashback</Text>
+                <Text style={styles.earningLabel}>My Wallet</Text>
                 <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
                   <Text style={styles.earningValue}>₹2,450.75</Text>
                   <View
@@ -111,28 +114,9 @@ const AccountScreen = ({ navigation }) => {
               </View>
               <GcChevronRight width={18} height={18} color="#9CA3AF" />
             </TouchableOpacity>
-
-
-            <TouchableOpacity
-              style={[styles.earningItem, { borderBottomWidth: 0 }]}
-            >
-              <View
-                style={[styles.earningIconBox, { backgroundColor: '#EEF2FF' }]}
-              >
-                <AccGiftRef width={22} height={22} color="#6366F1" />
-              </View>
-              <View style={styles.earningInfo}>
-                <Text style={styles.earningLabel}>Referral Earnings</Text>
-                <Text style={[styles.earningValue, styles.referralValue]}>
-                  ₹320.00
-                </Text>
-              </View>
-              <GcChevronRight width={18} height={18} color="#9CA3AF" />
-            </TouchableOpacity>
           </View>
         </View>
 
-        {/* Menu Items */}
         <View style={styles.section}>
           <View style={styles.menuList}>
             <TouchableOpacity
@@ -166,18 +150,6 @@ const AccountScreen = ({ navigation }) => {
             </TouchableOpacity>
 
 
-            <TouchableOpacity style={styles.menuItem}>
-              <View style={styles.menuIconBox}>
-                <AccHistory width={24} height={24} color="#4B5563" />
-              </View>
-              <View style={styles.menuTextContent}>
-                <Text style={styles.menuLabel}>Transaction History</Text>
-                <Text style={styles.menuSub}>
-                  View all your wallet transactions
-                </Text>
-              </View>
-              <GcChevronRight width={20} height={20} color="#9CA3AF" />
-            </TouchableOpacity>
 
             <TouchableOpacity
               style={styles.menuItem}

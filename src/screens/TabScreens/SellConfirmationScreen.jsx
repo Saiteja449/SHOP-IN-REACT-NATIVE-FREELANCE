@@ -53,7 +53,6 @@ const SellConfirmationScreen = ({ navigation }) => {
             <Text style={styles.dataLabel}>Brand</Text>
             <View style={{ flexDirection: 'row', alignItems: 'center', gap: 6 }}>
               <Text style={styles.dataValue}>Amazon</Text>
-              <BrandAmazon width={16} height={16} />
             </View>
           </View>
           <View style={styles.dataRow}>
@@ -161,7 +160,10 @@ const SellConfirmationScreen = ({ navigation }) => {
           </Text>
         </View>
 
-        <TouchableOpacity style={styles.viewBtn}>
+        <TouchableOpacity 
+          style={styles.viewBtn}
+          onPress={() => navigation.navigate('WalletScreen')}
+        >
           <AccHistory width={20} height={20} color="#FFFFFF" />
           <Text style={styles.viewBtnText}>View My Transactions</Text>
         </TouchableOpacity>

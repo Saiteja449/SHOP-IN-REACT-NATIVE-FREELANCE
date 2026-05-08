@@ -17,14 +17,6 @@ import TabHome from '../../Icons/TabHome.svg';
 import TabStore from '../../Icons/TabStore.svg';
 import { notificationStyles as styles } from '../../Styles/styles';
 
-const filters = [
-  { id: 'all', label: 'All', Icon: TabHome, active: true },
-  { id: 'offers', label: 'Offers', Icon: TabGift },
-  { id: 'cashback', label: 'Cashback', Icon: AccRupee },
-  { id: 'orders', label: 'Orders', Icon: StoreCart },
-  { id: 'updates', label: 'Updates', Icon: AccBell },
-];
-
 const notifications = [
   {
     id: 1,
@@ -134,31 +126,6 @@ const NotificationsScreen = ({ navigation }) => {
     <View style={styles.screen}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
       <CustomHeader title="Notifications" onBackPress={() => navigation.goBack()} />
-
-      <View style={{ backgroundColor: '#FFFFFF' }}>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.filterScroll}
-        >
-          {filters.map(filter => (
-            <TouchableOpacity
-              key={filter.id}
-              style={[styles.filterCapsule, filter.active && styles.filterCapsuleActive]}
-            >
-              <filter.Icon
-                width={16}
-                height={16}
-                color={filter.active ? '#16A34A' : '#4B5563'}
-              />
-              <Text style={[styles.filterText, filter.active && styles.filterTextActive]}>
-                {filter.label}
-              </Text>
-            </TouchableOpacity>
-          ))}
-        </ScrollView>
-      </View>
-
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}

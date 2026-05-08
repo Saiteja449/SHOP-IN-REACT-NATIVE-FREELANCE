@@ -17,6 +17,7 @@ import ShoppingBag from '../../Icons/ShoppingBag.svg';
 import TabGift from '../../Icons/TabGift.svg';
 import Truck from '../../Icons/Truck.svg';
 import Wallet from '../../Icons/Wallet.svg';
+import AccRupee from '../../Icons/AccRupee.svg';
 import CustomHeader from '../../Components/CustomHeader';
 import { homeStyles as styles } from '../../Styles/styles';
 
@@ -87,11 +88,11 @@ const giftCards = [
   },
 ];
 
-const HomeScreen = () => {
+const HomeScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#F8FBF3" />
-      <CustomHeader title="Home" showBack={false} showNotificationBell={true} />
+      <CustomHeader title="Home" showBack={false} showNotificationBell={true} showLogo={true} />
 
 
       <ScrollView
@@ -138,7 +139,10 @@ const HomeScreen = () => {
             ))}
           </ScrollView>
 
-          <TouchableOpacity activeOpacity={0.9}>
+          <TouchableOpacity 
+            activeOpacity={0.9}
+            onPress={() => navigation.navigate('Cashback')}
+          >
             <LinearGradient
               colors={['#60B531', '#2E8F22']}
               style={styles.ctaButton}
@@ -188,7 +192,9 @@ const HomeScreen = () => {
           <View style={styles.allStoreRight}>
             <Text style={styles.allStoreTitle}>All in One Store</Text>
             <Text style={styles.allStoreSub}>Shop from 1000+ stores...</Text>
-            <TouchableOpacity style={styles.secondaryBtn}>
+            <TouchableOpacity 
+              style={styles.secondaryBtn}
+            >
               <Text style={styles.secondaryBtnText}>Explore All Stores</Text>
               <Text style={styles.secondaryBtnText}>→</Text>
             </TouchableOpacity>
@@ -237,11 +243,17 @@ const HomeScreen = () => {
             ))}
           </ScrollView>
 
-          <TouchableOpacity style={styles.buyBtn}>
+          <TouchableOpacity 
+            style={styles.buyBtn}
+            onPress={() => navigation.navigate('Gift Cards')}
+          >
             <Text style={styles.buyBtnText}>Buy Gift Cards</Text>
             <Text style={styles.buyBtnText}>→</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.sellBtn}>
+          <TouchableOpacity 
+            style={styles.sellBtn}
+            onPress={() => navigation.navigate('SellGiftCardScreen')}
+          >
             <Text style={styles.sellBtnText}>Sell Gift Cards</Text>
             <Text style={styles.sellBtnText}>→</Text>
           </TouchableOpacity>

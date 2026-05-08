@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  Image,
   ScrollView,
   StatusBar,
   Text,
@@ -35,8 +36,12 @@ const PurchaseSuccessScreen = ({ navigation }) => {
 
         {/* Summary Card */}
         <View style={styles.summaryCard}>
-          <View style={styles.logoBox}>
-            <BrandAmazon width={40} height={40} />
+          <View style={[styles.logoBox]}>
+            <Image 
+              source={require('../../../assets/images/amazon_white.png')} 
+              style={{ width: 40, height: 40 }} 
+              resizeMode="contain" 
+            />
           </View>
           <View style={styles.summaryInfo}>
             <Text style={styles.summaryTitle}>Amazon Gift Card</Text>
@@ -97,7 +102,6 @@ const PurchaseSuccessScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Gift Card Code */}
         <View style={styles.codeSection}>
           <View style={styles.codeHeader}>
             <AccGiftRef width={20} height={20} color="#4338CA" />
@@ -112,7 +116,6 @@ const PurchaseSuccessScreen = ({ navigation }) => {
           <Text style={styles.codeNote}>ⓘ This is a secure 16-digit gift card code.</Text>
         </View>
 
-        {/* Reminder */}
         <View style={styles.reminderCard}>
           <Text style={{ fontSize: 16 }}>💡</Text>
           <Text style={styles.reminderText}>
@@ -120,19 +123,19 @@ const PurchaseSuccessScreen = ({ navigation }) => {
           </Text>
         </View>
 
-        {/* Actions */}
         <TouchableOpacity style={styles.shopBtn}>
           <StoreCart width={20} height={20} color="#FFFFFF" />
           <Text style={styles.shopBtnText}>Start Shopping & Earn Cashback</Text>
-          <Text style={{ color: '#FFFFFF', fontSize: 18 }}>→</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.viewCardsBtn}>
+        <TouchableOpacity 
+          style={styles.viewCardsBtn}
+          onPress={() => navigation.navigate('MainTabs', { screen: 'Gift Cards' })}
+        >
           <AccGiftRef width={20} height={20} color="#4338CA" />
           <Text style={styles.viewCardsText}>View My Gift Cards</Text>
         </TouchableOpacity>
 
-        {/* Footer */}
         <View style={styles.footerSafe}>
           <ShieldCheck width={16} height={16} color="#16A34A" />
           <Text style={styles.footerSafeText}>Safe & Secure Transaction</Text>

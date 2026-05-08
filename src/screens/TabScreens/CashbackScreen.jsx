@@ -110,24 +110,19 @@ const topStores = [
     offer: 'Upto 4%',
     image: require('../../../assets/images/zomato.png'),
   },
-  { name: 'Swiggy', offer: 'Upto 5%', text: 'S', color: '#FF6800' },
-  { name: '1mg', offer: 'Upto 7%', text: '1mg', color: '#111111' },
-  { name: 'The Body Shop', offer: 'Upto 5%', text: '◜◝', color: '#0B6B48' },
   {
-    name: 'Bewakoof',
+    name: 'Swiggy',
     offer: 'Upto 5%',
-    text: 'Bewakoof',
-    color: '#111111',
-    badge: true,
+    image: require('../../../assets/images/swiggy.png'),
   },
-  { name: '& More\n1000+ Stores', offer: 'Upto 5%', isMore: true },
+  { name: '1mg', offer: 'Upto 7%', text: '1mg', color: '#111111' },
 ];
 
 const CashbackScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#FFFFFF" />
-      <CustomHeader title="Cashback" showBack={false} showNotificationBell={true} />
+      <CustomHeader title="Cashback" showBack={false} showNotificationBell={true} showLogo={true} />
 
 
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
@@ -161,15 +156,15 @@ const CashbackScreen = () => {
             <Text style={styles.howTitle}>How it Works?</Text>
             <View style={styles.stepsRow}>
               {[
-                { step: '1. Enter Store Link', sub: 'Paste the link of the store you want to shop from', icon: '🔗' },
-                { step: '2. Generate Link', sub: "Click on 'Generate Link' to create your cashback link", icon: '⚙️' },
-                { step: '3. Share Link', sub: 'Share the link with your friends and family', icon: '🔗' },
-                { step: '4. Earn Cashback', sub: 'When they shop, you both earn exciting cashback', icon: '💰' }
+                { step: 'Enter Store Link', sub: 'Paste the link of the store you want to shop from' },
+                { step: 'Generate Link', sub: "Click on 'Generate Link' to create your cashback link" },
+                { step: 'Share Link', sub: 'Share the link with your friends and family' },
+                { step: 'Earn Cashback', sub: 'When they shop, you both earn exciting cashback' }
               ].map((item, index) => (
                 <React.Fragment key={index}>
                   <View style={styles.stepItem}>
                     <View style={styles.stepCircle}>
-                      <Text style={{ fontSize: 16 }}>{item.icon}</Text>
+                      <Text style={{ fontSize: 14, fontFamily: 'Inter_18pt-Bold', color: '#fff' }}>{index + 1}</Text>
                     </View>
                     <Text style={styles.stepText}>{item.step}</Text>
                     <Text style={styles.stepSub}>{item.sub}</Text>

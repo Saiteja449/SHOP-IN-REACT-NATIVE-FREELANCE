@@ -393,7 +393,7 @@ export const loginStyles = StyleSheet.create({
   safe: { flex: 1, backgroundColor: '#F8FBF3' },
   screen: {
     flex: 1,
-    backgroundColor: '#F8FBF3',
+    backgroundColor: '#fff',
   },
   content: {
     paddingHorizontal: 20,
@@ -401,12 +401,12 @@ export const loginStyles = StyleSheet.create({
   },
   absCash: {
     position: 'absolute',
-    zIndex: -1,
+    zIndex: 0,
   },
   absDecor: {
     position: 'absolute',
-    opacity: 0.3,
-    zIndex: -1,
+    opacity: 0.4,
+    zIndex: 0,
   },
   brandWrap: {
     alignItems: 'center',
@@ -485,6 +485,7 @@ export const loginStyles = StyleSheet.create({
     fontSize: 34,
     fontFamily: 'Inter_18pt-Bold',
     color: '#172015',
+    textAlign:"center"
   },
   welcomeSub: {
     marginTop: 4,
@@ -492,6 +493,7 @@ export const loginStyles = StyleSheet.create({
     fontSize: 13,
     fontFamily: 'Inter_18pt-Regular',
     color: '#6B7467',
+    textAlign:"center"
   },
   phoneInput: {
     minHeight: 52,
@@ -1690,6 +1692,7 @@ export const giftCardStyles = StyleSheet.create({
   },
   cashbackLeft: {
     flex: 1,
+    alignSelf:"center"
   },
   cashbackDivider: {
     width: 1,
@@ -1701,7 +1704,7 @@ export const giftCardStyles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
   },
   cashbackLabel: {
     fontSize: 10,
@@ -2043,7 +2046,7 @@ export const accountStyles = StyleSheet.create({
   },
   profileSection: {
     alignItems: 'center',
-    paddingVertical: 20,
+    paddingTop: 20,
   },
   avatarContainer: {
     position: 'relative',
@@ -2104,7 +2107,7 @@ export const accountStyles = StyleSheet.create({
     fontFamily: 'Inter_18pt-SemiBold',
   },
   section: {
-    marginTop: 30,
+    marginTop: 16,
     paddingHorizontal: 20,
   },
   sectionTitle: {
@@ -4047,7 +4050,7 @@ export const purchaseStyles = StyleSheet.create({
     marginTop: 2,
   },
   promoCard: {
-    margin: 16,
+    marginHorizontal: 16,
     backgroundColor: '#F5F3FF',
     borderRadius: 20,
     padding: 20,
@@ -4120,7 +4123,7 @@ export const purchaseStyles = StyleSheet.create({
     lineHeight: 14,
   },
   codeSection: {
-    margin: 16,
+    marginHorizontal: 16,
     backgroundColor: '#FFFFFF',
     borderRadius: 16,
     padding: 20,
@@ -4142,7 +4145,7 @@ export const purchaseStyles = StyleSheet.create({
   },
   codeBox: {
     width: '100%',
-    height: 60,
+    height: 50,
     backgroundColor: '#F9FAFB',
     borderRadius: 12,
     borderWidth: 1,
@@ -4150,15 +4153,14 @@ export const purchaseStyles = StyleSheet.create({
     borderStyle: 'dashed',
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 16,
+    paddingHorizontal: 8,
   },
   codeText: {
     flex: 1,
-    fontSize: 18,
+    fontSize: 14,
     fontFamily: 'Inter_18pt-ExtraBold',
     color: '#4338CA',
     letterSpacing: 1,
-    textAlign: 'center',
   },
   copyBtn: {
     backgroundColor: '#4338CA',

@@ -1,5 +1,4 @@
-import React from 'react';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import GcBack from '../Icons/GcBack.svg';
 import AccBell from '../Icons/AccBell.svg';
@@ -11,6 +10,7 @@ const CustomHeader = ({
   onBackPress, 
   showBack = true, 
   showNotificationBell = false,
+  showLogo = false,
   RightComponent 
 }) => {
   const navigation = useNavigation();
@@ -18,10 +18,18 @@ const CustomHeader = ({
   return (
     <View style={styles.container}>
       <View style={styles.leftContainer}>
-        {showBack && (
+        {showBack ? (
           <TouchableOpacity onPress={onBackPress}>
             <GcBack width={24} height={24} color="#059669" />
           </TouchableOpacity>
+        ) : (
+          showLogo && (
+            <Image 
+              source={require('../../assets/images/app icon.png')} 
+              style={{ width: 32, height: 32, borderRadius: 8 }}
+              resizeMode="contain"
+            />
+          )
         )}
       </View>
       

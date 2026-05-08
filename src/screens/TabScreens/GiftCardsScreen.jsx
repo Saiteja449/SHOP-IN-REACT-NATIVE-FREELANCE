@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, StatusBar, Text, View } from 'react-native';
+import { Image, ScrollView, StatusBar, Text, TouchableOpacity, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import BrandAmazon from '../../Icons/BrandAmazon.svg';
@@ -30,53 +30,60 @@ import CustomHeader from '../../Components/CustomHeader';
 import { giftCardStyles as styles } from '../../Styles/styles';
 
 
-/* ─── data ─────────────────────────────────────────────────────────── */
-const topNavItems = [
-  {
-    id: 'stores',
-    label: 'All Stores',
-    sub: 'Explore 250+ brands',
-    Icon: GcAllStores,
-  },
-  {
-    id: 'cashback',
-    label: 'Cashback',
-    sub: 'Earn on every purchase',
-    Icon: GcCashback,
-  },
-  {
-    id: 'gift',
-    label: 'Gift Cards',
-    sub: 'Buy or Sell Instantly',
-    Icon: GcGift,
-    active: true,
-  },
-];
-
 const tabs = [
   { id: 'buy', label: 'Buy Gift Cards', Icon: GcGift },
-  { id: 'sell', label: 'Sell Gift Cards', Icon: GcSell },
   { id: 'my', label: 'My Gift Cards', Icon: GcMyCards },
+];
+
+const myGiftCards = [
+  {
+    id: 'my-1',
+    name: 'Amazon Pay',
+    amount: '₹5,000',
+    code: 'XXXX-XXXX-XXXX-1234',
+    expiry: 'Dec 2026',
+    image: require('../../../assets/images/amazon_pay.png'),
+    bg: '#F3F3F3',
+  },
+  {
+    id: 'my-2',
+    name: 'Zomato',
+    amount: '₹500',
+    code: 'XXXX-XXXX-XXXX-5678',
+    expiry: 'Oct 2026',
+    image: require('../../../assets/images/zomato.png'),
+    bg: '#FFF0F0',
+  },
 ];
 
 const categories = [
   {
     name: 'Amazon Pay',
-    Logo: BrandAmazon,
+    image: require('../../../assets/images/amazon_white.png'),
     offer: 'Up to 5% OFF',
     bg: '#F3F3F3',
   },
   {
     name: 'Flipkart',
-    Logo: BrandFlipkart,
+    image: require('../../../assets/images/flipkart.png'),
     offer: 'Up to 2% OFF',
     bg: '#E8F3FF',
   },
-  { name: 'Myntra', Logo: BrandMyntra, offer: 'Up to 3% OFF', bg: '#FFF0F5' },
-  { name: 'Zomato', Logo: BrandZomato, offer: 'Up to 5% OFF', bg: '#FFF0F0' },
+  {
+    name: 'Myntra',
+    image: require('../../../assets/images/myntra.png'),
+    offer: 'Up to 3% OFF',
+    bg: '#FFF0F5',
+  },
+  {
+    name: 'Zomato',
+    image: require('../../../assets/images/zomato.png'),
+    offer: 'Up to 5% OFF',
+    bg: '#FFF0F0',
+  },
   {
     name: 'Tata CLiQ',
-    Logo: BrandTataCliq,
+    image: require('../../../assets/images/tata_cliq.png'),
     offer: 'Up to 4% OFF',
     bg: '#F5F0FF',
   },
@@ -124,47 +131,24 @@ const giftCards = [
   },
 ];
 
-const bgPatterns = [
-  { top: 10, right: 20, rotate: '12deg', size: 40 },
-  { top: 4, right: 100, rotate: '-8deg', size: 32 },
-  { top: 50, right: 10, rotate: '22deg', size: 28 },
-  { top: 0, left: 60, rotate: '-18deg', size: 36 },
-  { top: 80, left: 20, rotate: '8deg', size: 30 },
-  { top: 160, right: 30, rotate: '-14deg', size: 34 },
-  { top: 200, left: 10, rotate: '20deg', size: 28 },
-  { top: 300, right: 60, rotate: '-10deg', size: 36 },
-  { top: 400, left: 30, rotate: '15deg', size: 30 },
-];
-
-/* ─── sub-components ────────────────────────────────────────────────── */
-
-
-const TopNavCard = ({ item }) => {
-  const Icon = item.Icon;
-  const isActive = item.active;
-  return (
-    <View style={[styles.topNavCard, isActive && styles.topNavCardActive]}>
-      <View
-        style={[styles.topNavIconWrap, isActive && styles.topNavIconWrapActive]}
-      >
-        <Icon width={20} height={20} color={isActive ? '#FFFFFF' : '#4A2FD8'} />
-      </View>
-      <Text style={[styles.topNavLabel, isActive && styles.topNavLabelActive]}>
-        {item.label}
-      </Text>
-      <Text style={[styles.topNavSub, isActive && styles.topNavSubActive]}>
-        {item.sub}
-      </Text>
-    </View>
-  );
-};
-
 const CategoryCard = ({ item, onPress }) => {
   const Logo = item.Logo;
   return (
-    <TouchableOpacity style={styles.categoryCard} onPress={onPress}>
+    <TouchableOpacity
+      activeOpacity={0.9}
+      style={styles.categoryCard}
+      onPress={onPress}
+    >
       <View style={[styles.categoryLogoWrap, { backgroundColor: item.bg }]}>
-        <Logo width={52} height={32} />
+        {item.image ? (
+          <Image
+            source={item.image}
+            style={{ width: 52, height: 36 }}
+            resizeMode="contain"
+          />
+        ) : (
+          Logo && <Logo width={36} height={36} />
+        )}
       </View>
       <Text style={styles.categoryBrandName}>{item.name}</Text>
       <Text style={styles.categoryOffer}>{item.offer}</Text>
@@ -247,40 +231,13 @@ const GiftCardsScreen = ({ navigation }) => {
     <View style={styles.screen}>
       <StatusBar barStyle="dark-content" backgroundColor="#EEEAF8" />
 
-      {/* Background pattern */}
-      {bgPatterns.map((p, i) => (
-        <View
-          key={`gc-pattern-${i}`}
-          style={[
-            styles.patternItem,
-            {
-              top: p.top,
-              left: p.left,
-              right: p.right,
-              transform: [{ rotate: p.rotate }],
-            },
-          ]}
-        >
-          <GcBgPattern width={p.size} height={p.size} color="#5B3FD4" />
-        </View>
-      ))}
 
       <ScrollView
         contentContainerStyle={styles.scrollContent}
         showsVerticalScrollIndicator={false}
       >
-      <CustomHeader title="Gift Cards" showBack={false} showNotificationBell={true} />
+        <CustomHeader title="Gift Cards" showBack={false} showNotificationBell={true} showLogo={true} />
 
-
-
-        {/* Top 3 Nav Cards */}
-        <View style={styles.topNavRow}>
-          {topNavItems.map(item => (
-            <TopNavCard key={item.id} item={item} />
-          ))}
-        </View>
-
-        {/* Cashback Banner */}
         <LinearGradient
           colors={['#4A2FD8', '#6B47F5']}
           start={{ x: 0, y: 0 }}
@@ -299,9 +256,6 @@ const GiftCardsScreen = ({ navigation }) => {
             <View>
               <Text style={styles.cashbackLabel}>Available Balance</Text>
               <Text style={styles.cashbackAmount}>₹3,450</Text>
-            </View>
-            <View style={styles.cashbackArrow}>
-              <GcChevronRight width={14} height={14} color="#FFFFFF" />
             </View>
           </View>
         </LinearGradient>
@@ -346,54 +300,102 @@ const GiftCardsScreen = ({ navigation }) => {
           </View>
         </View>
 
-        {/* Browse by Categories */}
-        <View style={styles.sectionHeader}>
-          <Text style={styles.sectionTitle}>Browse by Categories</Text>
-          <View style={styles.viewAllBtn}>
-            <Text style={styles.viewAllText}>View All</Text>
-            <GcChevronRight width={13} height={13} color="#4A2FD8" />
+        {activeTab === 'buy' ? (
+          <>
+            {/* Browse by Categories */}
+            <View style={styles.sectionHeader}>
+              <Text style={styles.sectionTitle}>Browse by Categories</Text>
+              <View style={styles.viewAllBtn}>
+                <Text style={styles.viewAllText}>View All</Text>
+                <GcChevronRight width={13} height={13} color="#4A2FD8" />
+              </View>
+            </View>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.categoryScroll}
+            >
+              {categories.map(item => (
+                <CategoryCard
+                  key={item.name}
+                  item={item}
+                  onPress={() => navigation.navigate('GiftCardCheckoutScreen')}
+                />
+              ))}
+            </ScrollView>
+
+
+            {/* Top Gift Cards Filters */}
+            <View style={[styles.sectionHeader, { marginTop: 18 }]}>
+              <Text style={styles.sectionTitle}>Top Gift Cards</Text>
+            </View>
+            <ScrollView
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.filterScroll}
+            >
+              {filters.map(item => (
+                <FilterItem key={item.id} item={item} />
+              ))}
+            </ScrollView>
+
+            {/* All Gift Cards */}
+            <View style={styles.allGiftCardsSection}>
+              <Text style={styles.allGiftCardsTitle}>All Gift Cards</Text>
+              {giftCards.map(item => (
+                <GiftCardItem
+                  key={item.id}
+                  item={item}
+                  onPress={() => navigation.navigate('GiftCardCheckoutScreen')}
+                />
+              ))}
+            </View>
+          </>
+        ) : (
+          <View style={{ paddingHorizontal: 20, paddingTop: 10 }}>
+            {myGiftCards.map(card => (
+              <TouchableOpacity 
+                key={card.id} 
+                activeOpacity={0.9}
+                onPress={() => navigation.navigate('SellGiftCardScreen')}
+                style={{ backgroundColor: '#FFFFFF', borderRadius: 16, padding: 16, marginBottom: 16, elevation: 2, borderWidth: 1, borderColor: '#F3F4F6' }}
+              >
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                  <View style={{ flexDirection: 'row', gap: 12 }}>
+                    <View style={{ width: 48, height: 48, borderRadius: 12, backgroundColor: card.bg, alignItems: 'center', justifyContent: 'center' }}>
+                      {card.image ? (
+                        <Image source={card.image} style={{ width: 34, height: 34 }} resizeMode="contain" />
+                      ) : (
+                        card.Logo && <card.Logo width={32} height={32} />
+                      )}
+                    </View>
+                    <View>
+                      <Text style={{ fontSize: 16, fontFamily: 'Inter_18pt-Bold', color: '#111827' }}>{card.name}</Text>
+                      <Text style={{ fontSize: 14, color: '#6B7280', fontFamily: 'Inter_18pt-Medium' }}>{card.amount}</Text>
+                    </View>
+                  </View>
+                  <View style={{ gap: 8, alignItems: 'flex-end' }}>
+                    <View style={{ backgroundColor: '#F0FDF4', paddingHorizontal: 8, paddingVertical: 4, borderRadius: 6 }}>
+                      <Text style={{ fontSize: 10, color: '#16A34A', fontFamily: 'Inter_18pt-Bold' }}>Active</Text>
+                    </View>
+                    <Text style={{ fontSize: 10, color: '#4A2FD8', fontFamily: 'Inter_18pt-Bold' }}>Click to Sell →</Text>
+                  </View>
+                </View>
+                <View style={{ height: 1, backgroundColor: '#F3F4F6', marginVertical: 12 }} />
+                <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <View>
+                    <Text style={{ fontSize: 10, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: 0.5 }}>Card Code</Text>
+                    <Text style={{ fontSize: 13, color: '#374151', fontFamily: 'Inter_18pt-SemiBold', marginTop: 2 }}>{card.code}</Text>
+                  </View>
+                  <View style={{ alignItems: 'flex-end' }}>
+                    <Text style={{ fontSize: 10, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: 0.5 }}>Expiry</Text>
+                    <Text style={{ fontSize: 13, color: '#374151', fontFamily: 'Inter_18pt-SemiBold', marginTop: 2 }}>{card.expiry}</Text>
+                  </View>
+                </View>
+              </TouchableOpacity>
+            ))}
           </View>
-        </View>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.categoryScroll}
-        >
-          {categories.map(item => (
-            <CategoryCard 
-              key={item.name} 
-              item={item} 
-              onPress={() => navigation.navigate('GiftCardCheckoutScreen')}
-            />
-          ))}
-        </ScrollView>
-
-
-        {/* Top Gift Cards Filters */}
-        <View style={[styles.sectionHeader, { marginTop: 18 }]}>
-          <Text style={styles.sectionTitle}>Top Gift Cards</Text>
-        </View>
-        <ScrollView
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.filterScroll}
-        >
-          {filters.map(item => (
-            <FilterItem key={item.id} item={item} />
-          ))}
-        </ScrollView>
-
-        {/* All Gift Cards */}
-        <View style={styles.allGiftCardsSection}>
-          <Text style={styles.allGiftCardsTitle}>All Gift Cards</Text>
-          {giftCards.map(item => (
-            <GiftCardItem 
-              key={item.id} 
-              item={item} 
-              onPress={() => navigation.navigate('GiftCardCheckoutScreen')}
-            />
-          ))}
-        </View>
+        )}
 
       </ScrollView>
     </View>

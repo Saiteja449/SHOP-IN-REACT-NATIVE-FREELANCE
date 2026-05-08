@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, StatusBar, Text, View } from 'react-native';
+import { Image, ScrollView, StatusBar, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 import BrandAjio from '../../Icons/BrandAjio.svg';
@@ -79,7 +79,7 @@ const topStores = [
   },
   { name: 'Boat', offer: 'Upto 6%', text: 'boAt', color: '#111111' },
   { name: 'Zomato', offer: 'Upto 4%', Logo: BrandZomato },
-  { name: 'Swiggy', offer: 'Upto 5%', text: 'S', color: '#FF6800' },
+  { name: 'Swiggy', offer: 'Upto 5%', image: require('../../../assets/images/swiggy.png') },
   { name: '1mg', offer: 'Upto 7%', text: '1mg', color: '#111111' },
   { name: 'The Body Shop', offer: 'Upto 5%', text: '◜◝', color: '#0B6B48' },
   {
@@ -147,6 +147,13 @@ const StoreTile = ({ item, compact }) => {
     <View style={[styles.storeTile, compact && styles.compactStoreTile]}>
       <View style={compact ? styles.compactLogoWrap : styles.logoWrap}>
         {Logo && <Logo width={compact ? 62 : 58} height={compact ? 34 : 42} />}
+        {item.image && (
+          <Image
+            source={item.image}
+            style={{ width: '80%', height: '80%' }}
+            resizeMode="contain"
+          />
+        )}
         {item.text && (
           <View style={item.badge && styles.bewakoofBadge}>
             <Text

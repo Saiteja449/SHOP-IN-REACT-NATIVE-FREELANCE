@@ -13,7 +13,6 @@ import CashbackScreen from '../screens/TabScreens/CashbackScreen';
 
 import GiftCardsScreen from '../screens/TabScreens/GiftCardsScreen';
 import HomeScreen from '../screens/TabScreens/HomeScreen';
-import StoresScreen from '../screens/TabScreens/StoresScreen';
 import { tabNavigationStyles as styles } from '../Styles/styles';
 
 const Tab = createBottomTabNavigator();
